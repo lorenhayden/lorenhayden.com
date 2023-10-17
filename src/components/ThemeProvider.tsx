@@ -11,17 +11,48 @@ export type Theme = 'light' | 'dark';
 
 export const ThemeContext = createContext<Theme>('light');
 
+export interface ThemeProviderProps {
+  theme: Theme;
+  children: ReactNode | ReactNode[];
+}
+
+export type ThemeDefition = {
+  primaryForeColor: string,
+  primaryBackColor: string,
+  secondaryForeColor: string
+  secondaryBackColor: string,
+}
+
+const LightTheme: ThemeDefition = {
+  primaryForeColor: "#2196f3",
+  primaryBackColor: "#f1f1f1",
+  secondaryForeColor: "#f1f1f1",
+  secondaryBackColor: "#1769aa",
+}
+
+const DarkTheme: ThemeDefition = {
+  primaryForeColor: "#C0C0C0",
+  primaryBackColor: "#222222",
+  secondaryForeColor: "#333333",
+  secondaryBackColor: "#FFFFFF",
+}
+
+export const useThemeColors = (theme: string) =>  {
+  if( theme === 'light' ) {
+    return LightTheme;
+  } else  if( theme === 'dark' ) {
+    return DarkTheme;
+  } else {
+    throw new Error("useThemeColor expects light | dark as the theme only.")
+  }
+}
+
 export const useTheme = () => {
   const theme = useContext(ThemeContext);
   if (!theme) {
     throw new Error("useTheme must be used within a ThemeProvider");
   }
   return theme;
-}
-
-export interface ThemeProviderProps {
-  theme: Theme;
-  children: ReactNode | ReactNode[];
 }
 
 export const getTheme = (): Theme => {
