@@ -5,8 +5,8 @@ import { useTheme } from '../components/ThemeProvider';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 /* sass */
-import '../sass/_components.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '../sass/_components.scss'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 /* exports */
@@ -21,7 +21,7 @@ export interface MenuItemProps {
 }
 
 const Menu: FC<MenuProps> = ({ children }) => {
-  const theme = useTheme();
+  const theme = useTheme()
   return (
     <ul className={`menu-${theme}`}>
       {children}
@@ -30,13 +30,19 @@ const Menu: FC<MenuProps> = ({ children }) => {
 }
 
 export const MenuItem: FC<MenuItemProps> = (props) => {
-  const navigate = useNavigate();
-  const theme = useTheme();
+  const navigate = useNavigate()
+  const theme = useTheme()
+  const activate = (props.url === window.location.pathname)
+  let activeControl = undefined;
+  if (activate) {
+    activeControl = (<span>&nbsp;</span>)
+  }
   return (
-    <li className={`menu-item-${theme}`} onClick={()=> navigate(props.url)}>
+    <li className={`menu-item-${theme}`} onClick={() => navigate(props.url)}>
       <FontAwesomeIcon icon={props.icon} onClick={() => navigate(props.url)} />
       <a href={props.url}>{props.caption}</a>
       <i />
+      {activeControl}
     </li>
   )
 }

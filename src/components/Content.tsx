@@ -5,37 +5,11 @@ import { Routes, Route} from 'react-router-dom';
 /* sass */
 import '../sass/_components.scss';
 
-const Home = ( ) => {
-  return (
-    <div>
-      [Home]
-    </div>
-  )
-}
-
-const Experience = ( ) => {
-  return (
-    <div>
-      [Experience]      
-    </div>
-  )
-}
-
-const Skills = ( ) => {
-  return (
-    <div>
-      [Skills]
-    </div>
-  )
-}
-
-const Contact = ( ) => {
-  return (
-    <div>
-      [Contact]
-    </div>
-  )
-}
+/* views */
+import Home from './Home';
+import Experience from './Experience';
+import Skills from './Skills';
+import Contact from './Contact';
 
 
 const Content = ( ) => {
