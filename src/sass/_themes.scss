@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+:root {
+  font-family: 'Orbitron', sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+$themes: (
+  light: (
+    primary-fg: #2196f3,
+    primary-bg: #f1f1f1,
+    secondary-fg: #f1f1f1,
+    secondary-bg: #1769aa
+  ),
+  dark: (
+    primary-fg: #C0C0C0,
+    primary-bg: #222222,
+    secondary-fg: #333333,
+    secondary-bg: #FFFFFF
+  )
+);
+

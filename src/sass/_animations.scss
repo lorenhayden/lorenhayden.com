@@ -1,0 +1,17 @@
+@keyframes hud-slide-open {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: var(--hud-slide-open-opacity);
+  }
+}
+
+.hud-slide-open {
+  animation-name: hud-slide-open;
+  animation-duration: var(--hud-slide-open-duration);
+  animation-delay: var(--hud-slide-open-delay);
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: var(--hude-slide-open-count);
+  animation-fill-mode: both;
+}
