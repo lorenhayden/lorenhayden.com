@@ -30,23 +30,23 @@ export type ThemeDefition = {
 const LightTheme: ThemeDefition = {
   primaryForeColor: "#2196f3",
   primaryBackColor: "#f1f1f1",
-  primaryHoverForeColor: "string",
-  primaryHoverBackColor: "string",
+  primaryHoverForeColor: "white",
+  primaryHoverBackColor: "linear-gradient(to bottom, rgb(255, 187, 0), rgb(255, 81, 0))",
   secondaryForeColor: "#f1f1f1",
   secondaryBackColor: "#1769aa",
-  secondaryHoverForeColor: "string",
-  secondaryHoverBackColor: "string",
+  secondaryHoverForeColor: "white",
+  secondaryHoverBackColor: "linear-gradient(to bottom, #2196f3, #1769aa)",
 }
 
 const DarkTheme: ThemeDefition = {
   primaryForeColor: "#C0C0C0",
   primaryBackColor: "#222222",
-  primaryHoverForeColor: "",
-  primaryHoverBackColor: "",
+  primaryHoverForeColor: "white",
+  primaryHoverBackColor: "linear-gradient(to bottom, rgb(143, 1, 156), rgb(51, 0, 56))",
   secondaryForeColor: "#333333",
   secondaryBackColor: "#FFFFFF",
-  secondaryHoverForeColor: "string",
-  secondaryHoverBackColor: "string",
+  secondaryHoverForeColor: "white",
+  secondaryHoverBackColor: "linear-gradient(to bottom, #333333, #7a7a7a)",
 }
 
 export const useThemeColors = (theme: string) =>  {

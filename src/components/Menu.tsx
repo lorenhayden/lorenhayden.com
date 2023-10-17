@@ -40,8 +40,8 @@ export const MenuItem: FC<MenuItemProps> = (props) => {
   }
   return (
     <li className={`menu-item-${theme}`} onClick={() => navigate(props.url)}>
-      <FontAwesomeIcon icon={props.icon} onClick={() => navigate(props.url)} style={{color: activate === true ? colors.secondaryForeColor : colors.primaryForeColor}} />
-      <a href={props.url} style={{color: activate === true ? colors.secondaryForeColor : colors.primaryForeColor}}>{props.caption}</a>
+      <FontAwesomeIcon icon={props.icon} onClick={() => navigate(props.url)} style={{color: activate === true ? colors.secondaryHoverForeColor : colors.primaryForeColor}} />
+      <a href={props.url} style={{color: activate === true ? colors.secondaryHoverForeColor : colors.primaryForeColor}}>{props.caption}</a>
       <i />
       {activeControl}
     </li>

@@ -24,8 +24,8 @@
 
     &:hover {
       cursor: pointer;
-      color: map-get($theme, primary-fg);
-      background-color: map-get($theme, primary-bg);
+      color: map-get($theme, primary-hover-fg);
+      background: map-get($theme, primary-hover-bg);
       box-shadow: 0 0 10px map-get($theme, secondary-bg);
       transition-property: background-color, color, box-shadow;
       transition-duration: 1s;
@@ -127,14 +127,14 @@
 
     svg {
       user-select: none;
-      color: map-get($theme, primary-fg);
+      color: map-get($theme, primary-hover-fg);
       background-color: transparent;
       margin-right: 5px;
     }
 
     a {
       user-select: none;
-      color: map-get($theme, primary-fg);
+      color: map-get($theme, primary-hover-fg);
       background-color: transparent;
       text-decoration: none;
     }
@@ -164,8 +164,7 @@
       width: 100%;
       height: 100%;
       opacity: 1.0;
-      color: map-get($theme, primary-fg) !important;
-      background: linear-gradient(to bottom, map-get($theme, primary-fg), map-get($theme, secondary-bg));
+      background: map-get($theme, sercondary-hover-bg);
     }
   }
 
@@ -192,8 +191,8 @@
     &:hover {
       .side-bar-menu-#{$name} {
         cursor: pointer;
-        color: map-get($theme, primary-fg);
-        background-color: map-get($theme, primary-bg);
+        color: map-get($theme, primary-hover-fg);
+        background: map-get($theme, primary-hover-bg);
         box-shadow: 0 0 10px map-get($theme, secondary-bg);
         transition-property: background-color, color, box-shadow;
         transition-duration: 1s;
@@ -247,6 +246,7 @@
     width: 40px;
     transition-property: left;
     transition-duration: 1s;
+    box-shadow: 0 0 10px map-get($theme, primary-fg);
 
     .side-bar-button-#{$name} {
       &:nth-child(1) {
@@ -270,14 +270,14 @@
 
     &:hover {
       cursor: pointer;
-      color: map-get($theme, primary-fg);
-      background-color: map-get($theme, primary-bg);
+      color: map-get($theme, primary-hover-fg);
+      background: map-get($theme, primary-hover-bg);
       box-shadow: 0 0 10px map-get($theme, secondary-bg);
       transition-property: background-color, color, box-shadow;
       transition-duration: 1s;
 
       .side-bar-button-icon-#{$name} {
-        color: map-get($theme, primary-fg);
+        color: map-get($theme, primary-hover-fg);
       }
     }
 
