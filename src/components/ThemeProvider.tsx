@@ -19,22 +19,34 @@ export interface ThemeProviderProps {
 export type ThemeDefition = {
   primaryForeColor: string,
   primaryBackColor: string,
-  secondaryForeColor: string
+  primaryHoverForeColor: string,
+  primaryHoverBackColor: string,
+  secondaryForeColor: string,
   secondaryBackColor: string,
+  secondaryHoverForeColor: string,
+  secondaryHoverBackColor: string,
 }
 
 const LightTheme: ThemeDefition = {
   primaryForeColor: "#2196f3",
   primaryBackColor: "#f1f1f1",
+  primaryHoverForeColor: "string",
+  primaryHoverBackColor: "string",
   secondaryForeColor: "#f1f1f1",
   secondaryBackColor: "#1769aa",
+  secondaryHoverForeColor: "string",
+  secondaryHoverBackColor: "string",
 }
 
 const DarkTheme: ThemeDefition = {
   primaryForeColor: "#C0C0C0",
   primaryBackColor: "#222222",
+  primaryHoverForeColor: "",
+  primaryHoverBackColor: "",
   secondaryForeColor: "#333333",
   secondaryBackColor: "#FFFFFF",
+  secondaryHoverForeColor: "string",
+  secondaryHoverBackColor: "string",
 }
 
 export const useThemeColors = (theme: string) =>  {

@@ -1,7 +1,7 @@
 /* imports */
 import { FC, ReactNode } from 'react'
 import { useNavigate } from 'react-router-dom';
-import { useTheme } from '../components/ThemeProvider';
+import { useTheme, useThemeColors } from '../components/ThemeProvider';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 /* sass */
@@ -32,6 +32,7 @@ const Menu: FC<MenuProps> = ({ children }) => {
 export const MenuItem: FC<MenuItemProps> = (props) => {
   const navigate = useNavigate()
   const theme = useTheme()
+  const colors = useThemeColors(theme);
   const activate = (props.url === window.location.pathname)
   let activeControl = undefined;
   if (activate) {
@@ -39,8 +40,8 @@ export const MenuItem: FC<MenuItemProps> = (props) => {
   }
   return (
     <li className={`menu-item-${theme}`} onClick={() => navigate(props.url)}>
-      <FontAwesomeIcon icon={props.icon} onClick={() => navigate(props.url)} />
-      <a href={props.url}>{props.caption}</a>
+      <FontAwesomeIcon icon={props.icon} onClick={() => navigate(props.url)} style={{color: activate === true ? colors.secondaryForeColor : colors.primaryForeColor}} />
+      <a href={props.url} style={{color: activate === true ? colors.secondaryForeColor : colors.primaryForeColor}}>{props.caption}</a>
       <i />
       {activeControl}
     </li>

@@ -13,14 +13,22 @@ $themes: (
   light: (
     primary-fg: #2196f3,
     primary-bg: #f1f1f1,
+    primary-hover-fg: white,
+    primary-hover-bg: linear-gradient(to bottom, rgb(255, 187, 0), rgb(255, 81, 0)),
     secondary-fg: #f1f1f1,
-    secondary-bg: #1769aa
+    secondary-bg: #1769aa,
+    secondary-hover-fg: white,
+    sercondary-hover-bg: linear-gradient(to bottom, #2196f3, #1769aa),
   ),
   dark: (
     primary-fg: #C0C0C0,
     primary-bg: #222222,
+    primary-hover-fg: white,
+    primary-hover-bg: linear-gradient(to bottom, rgb(234, 0, 255), rgb(137, 0, 150)),
     secondary-fg: #333333,
-    secondary-bg: #FFFFFF
+    secondary-bg: #FFFFFF,
+    secondary-hover-fg: white,
+    sercondary-hover-bg: linear-gradient(to bottom, #222222, #333333),
   )
 );
 
