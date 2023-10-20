@@ -40,7 +40,7 @@
     }
 
     @media(max-width: 512px) {
-      top: 20px;
+      top: 15px;
       font-size: 20px;
       width: 40px;
       height: 40px;
@@ -61,7 +61,7 @@
     flex-flow: row nowrap;
     align-items: center;
     justify-content: center;
-    background-color: map-get($theme, primary-bg);
+    opacity: .75;
     transition-property: background-color;
     transition-duration: 1s;
   }
@@ -183,6 +183,7 @@
     transition-duration: 1s;
 
     @media(max-width: 512px) {
+      top: 15px;
       left: 0px;
       transition-property: left;
       transition-duration: 1s;
@@ -290,20 +291,66 @@
     }
   }
 
-  .content-#{$name} {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
+  .scroller-#{$name} {
+    user-select: none;
+
+    p {
+      text-transform: uppercase;
+
+      svg {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .word-animator-#{$name} {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 50px;
     color: map-get($theme, primary-fg);
-    background-color: map-get($theme, primary-bg);
-    width: 100vw;
+    transition: 1s font-size;
+
+    @media(max-width: 1536px) {
+      font-size: 40px;
+      transition: 1s font-size;
+    }
+
+    @media(max-width: 1024px) {
+      font-size: 30px;
+      transition: 1s font-size;
+    }
+
+    @media(max-width: 512px) {
+      font-size: 20px;
+      transition: 1s font-size;
+    }
+  }
+
+  .parallax-#{$name} {
     height: 100vh;
-    transition: 1s background-color, color
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 10px;
+
+    .parallax-header-#{$name} {
+      z-index: -1;
+      font-size: 2rem;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      transform-style: preserve-3d;
+      .parallax-image-#{$name} {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+   .parallax-section-#{$name} {
+      font-size: 2rem;
+      padding: 2rem;
+      color: map-get($theme, primary-fg);
+    }
   }
 }

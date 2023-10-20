@@ -28,11 +28,11 @@ export type ThemeDefition = {
 }
 
 const LightTheme: ThemeDefition = {
-  primaryForeColor: "#2196f3",
+  primaryForeColor: "#333333",
   primaryBackColor: "#f1f1f1",
   primaryHoverForeColor: "white",
-  primaryHoverBackColor: "linear-gradient(to bottom, rgb(255, 187, 0), rgb(255, 81, 0))",
-  secondaryForeColor: "#f1f1f1",
+  primaryHoverBackColor: "linear-gradient(to bottom, #333333, #555555)",
+  secondaryForeColor: "#555555",
   secondaryBackColor: "#1769aa",
   secondaryHoverForeColor: "white",
   secondaryHoverBackColor: "linear-gradient(to bottom, #2196f3, #1769aa)",
