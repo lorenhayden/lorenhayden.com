@@ -11,22 +11,22 @@
 }
 
 $themes: (
-  light: (primary-fg: #00c0e2,
-    primary-bg: #ffffff,
+  light: (primary-fg: #333333,
+    primary-bg: white,
     primary-hover-fg: white,
     primary-hover-bg: linear-gradient(to bottom, orange, orangered),
     secondary-fg: #555555,
-    secondary-bg: #CFCFCF,
+    secondary-bg: #f1f1f1,
     secondary-hover-fg: white,
-    sercondary-hover-bg: linear-gradient(to bottom, #336699, #114477),
+    sercondary-hover-bg: linear-gradient(to bottom, #03e2ff, #007180),
   ),
-  dark: (primary-fg: #C0C0C0,
-    primary-bg: #222222,
+  dark: (primary-fg: white,
+    primary-bg: #333333,
     primary-hover-fg: white,
-    primary-hover-bg: linear-gradient(to bottom, #C0C0C0, #333333),
-    secondary-fg: #333333,
-    secondary-bg: #FFFFFF,
+    primary-hover-bg: linear-gradient(to bottom, orange, orangered),
+    secondary-fg: #f1f1f1,
+    secondary-bg: #555555,
     secondary-hover-fg: white,
-    sercondary-hover-bg: linear-gradient(to bottom, #333333, #555555),
+    sercondary-hover-bg: linear-gradient(to bottom, #03e2ff, #007180),
   )
 );

@@ -12,18 +12,18 @@
     opacity: 0.25;
     width: var(--cursor-size);
     height: var(--cursor-size);    
-    background-color: map-get($theme, primary-bg);
+    background-color: transparent;
     transform: translate(-50%, -50%);
     transition-property: background-color;
     transition-duration: 1s;
     pointer-events: none;
   }
   
-  .cursor-grow {
+  .cursor-grow-#{$name} {
     background-color: transparent;
   }
   
-  .cursor-shrink {
+  .cursor-shrink-#{$name} {
     background-color: map-get($theme, primary-bgc);
   }
   
@@ -34,6 +34,7 @@
     opacity: 0.45;
     transition-property: top, left;
     transition-duration: 100ms;
+    pointer-events: none;
   }
   
   .cursor-#{$name}:nth-child(3) {
@@ -43,6 +44,7 @@
     opacity: 0.40;
     transition-property: top, left;
     transition-duration: 150ms;
+    pointer-events: none;
   }
   
   .cursor-#{$name}:nth-child(4) {
@@ -52,6 +54,7 @@
     opacity: 0.35;
     transition-property: top, left;
     transition-duration: 200ms;
+    pointer-events: none;
   }
   
   .cursor-#{$name}:nth-child(5) {
@@ -61,6 +64,7 @@
     opacity: 0.30;
     transition-property: top, left;
     transition-duration: 250ms;
+    pointer-events: none;
   }
   
   .cursor-#{$name}:nth-child(6) {
@@ -70,6 +74,7 @@
     opacity: 0.25;
     transition-property: top, left;
     transition-duration: 300ms;
+    pointer-events: none;
   }
 
   .cursor-#{$name}:nth-child(7) {
@@ -78,7 +83,8 @@
     border: solid 2pt lighten(map-get($theme, primary-fg), 10%);
     opacity: 0.25;
     transition-property: top, left;
-    transition-duration: 300ms;
+    transition-duration: 350ms;
+    pointer-events: none;
   }
 
 }

@@ -16,7 +16,6 @@
     flex-flow: row nowrap;
     align-items: center;
     justify-content: center;
-    background-color: transparent;
     transition-property: background-color;
     transition-duration: 1s;
   }
@@ -28,19 +27,11 @@
     list-style: none;
     padding: 16px;
     margin-right: 16px;
+    color: map-get($theme, scondary-bg);
 
     &:hover {
       cursor: pointer;
-
-      svg {
-        user-select: none;
-        color: map-get($theme, primary-hover-fg) !important;
-      }
-
-      a {
-        user-select: none;
-        color: map-get($theme, primary-hover-fg) !important;
-      }
+      color: map-get($theme, primary-hover-bg) !important;
 
       i {
         pointer-events: none;
@@ -81,14 +72,11 @@
     }
 
     svg {
-      user-select: none;
       color: map-get($theme, primary-fg);
-      background-color: transparent;
       margin-right: 5px;
     }
 
     a {
-      user-select: none;
       color: map-get($theme, primary-fg);
       background-color: transparent;
       text-decoration: none;
@@ -104,7 +92,8 @@
       width: 0%;
       height: 100%;
       opacity: 0;
-      background: map-get($theme, primary-hover-bg);
+      color: inherit;
+      background: inherit;
       transition-property: width, border-radius, opacity;
       transition-duration: 1s;
     }
@@ -120,6 +109,15 @@
       height: 100%;
       opacity: 1.0;
       background: map-get($theme, sercondary-hover-bg);
+      transition-property: background-color, color;
+      transition-duration: 1s;
     }
   }
+
+  .activate {
+    color: map-get($theme, secondary-hover-fg) !important;
+    transition-property: background-color, color;
+    transition-duration: 1s;
+  }
+
 }

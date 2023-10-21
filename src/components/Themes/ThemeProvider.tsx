@@ -16,48 +16,6 @@ export interface ThemeProviderProps {
   children: ReactNode | ReactNode[];
 }
 
-export type ThemeDefition = {
-  primaryForeColor: string,
-  primaryBackColor: string,
-  primaryHoverForeColor: string,
-  primaryHoverBackColor: string,
-  secondaryForeColor: string,
-  secondaryBackColor: string,
-  secondaryHoverForeColor: string,
-  secondaryHoverBackColor: string,
-}
-
-const LightTheme: ThemeDefition = {
-  primaryForeColor: "#333333",
-  primaryBackColor: "#f1f1f1",
-  primaryHoverForeColor: "white",
-  primaryHoverBackColor: "linear-gradient(to bottom, #333333, #555555)",
-  secondaryForeColor: "#555555",
-  secondaryBackColor: "#1769aa",
-  secondaryHoverForeColor: "white",
-  secondaryHoverBackColor: "linear-gradient(to bottom, #2196f3, #1769aa)",
-}
-
-const DarkTheme: ThemeDefition = {
-  primaryForeColor: "#C0C0C0",
-  primaryBackColor: "#222222",
-  primaryHoverForeColor: "white",
-  primaryHoverBackColor: "linear-gradient(to bottom, rgb(143, 1, 156), rgb(51, 0, 56))",
-  secondaryForeColor: "#333333",
-  secondaryBackColor: "#FFFFFF",
-  secondaryHoverForeColor: "white",
-  secondaryHoverBackColor: "linear-gradient(to bottom, #333333, #7a7a7a)",
-}
-
-export const useThemeColors = (theme: string) =>  {
-  if( theme === 'light' ) {
-    return LightTheme;
-  } else  if( theme === 'dark' ) {
-    return DarkTheme;
-  } else {
-    throw new Error("useThemeColor expects light | dark as the theme only.")
-  }
-}
 
 export const useTheme = () => {
   const theme = useContext(ThemeContext);

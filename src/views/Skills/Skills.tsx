@@ -2,12 +2,12 @@
 import { useTheme } from "../../components/Themes/ThemeProvider";
 
 /* sass */
-import "./_skills.scss";
+import "../../sass/_views.scss";
 
 const Skills = () => {
   const theme = useTheme();
   return (
-    <div className={`skills-${theme}`}>
+    <div id="skills" className={`view-${theme}`}>
       [Skills]
     </div>
   )

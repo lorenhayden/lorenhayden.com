@@ -4,13 +4,13 @@ import { useTheme } from "../../components/Themes/ThemeProvider";
 /* sass */
 import "../../sass/_views.scss";
 
-const Home = () => {
+const About = () => {
   const theme = useTheme();
   return (
-    <div id="home" className={`view-${theme}`}>
-      [Home]
+    <div id="about" className={`view-${theme}`}>
+      [About]
     </div>
   )
 }
 
-export default Home;
+export default About;

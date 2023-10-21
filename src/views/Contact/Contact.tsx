@@ -2,12 +2,12 @@
 import { useTheme } from "../../components/Themes/ThemeProvider";
 
 /* sass */
-import "./_contact.scss";
+import "../../sass/_views.scss";
 
 const Contact = () => {
   const theme = useTheme();
   return (
-    <div className={`contact-${theme}`}>
+    <div id="contact" className={`view-${theme}`}>
       [Contact]
     </div>
   )
