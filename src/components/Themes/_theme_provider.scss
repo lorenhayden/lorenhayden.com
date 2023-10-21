@@ -1,0 +1,51 @@
+@import '../../sass/animations';
+@import '../../sass/themes';
+
+@each $name, $theme in $themes {
+  .theme-picker-#{$name} {
+    display: flex;
+    flex-flow: row now;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    position: absolute;
+    top: 100px;
+    right: 0px;
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    color: map-get($theme, secondary-fg);
+    background-color: map-get($theme, secondary-bg);
+    box-shadow: 0 0 10px map-get($theme, secondary-bg);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    transition-property: background-color, color, box-shadow;
+    transition-duration: 1s;
+
+    &:hover {
+      cursor: pointer;
+      color: map-get($theme, primary-hover-fg);
+      background: map-get($theme, primary-hover-bg);
+      box-shadow: 0 0 10px map-get($theme, secondary-bg);
+      transition-property: background-color, color, box-shadow;
+      transition-duration: 1s;
+    }
+
+    @media(max-width: 1024px) {
+      top: 100px;
+      font-size: 25px;
+      width: 45px;
+      height: 45px;
+      transition: 1s top;
+    }
+
+    @media(max-width: 512px) {
+      top: 15px;
+      font-size: 20px;
+      width: 40px;
+      height: 40px;
+      transition: 1s top;
+    }
+  }
+
+}

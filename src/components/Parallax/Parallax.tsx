@@ -1,9 +1,9 @@
 /* imports */
 import { FC, ReactNode } from 'react';
-import { useTheme } from "./ThemeProvider"
+import { useTheme } from "../Themes/ThemeProvider"
 
 /* sass */
-import "../sass/_components.scss";
+import "./_parallax.scss";
 
 /* defaults */
 export const DEFAULT_PARALLAX_PERSPECTIVE = "10px";
@@ -13,20 +13,21 @@ export interface ParallaxProps {
   children: ReactNode | ReactNode[]
 }
 
+
 export type ParallaxImage = {
   src: string,
   description: string,
   perspective: string,
-  scale: string,
+  scaleX: string,
+  scaleY: string
 }
 
-export interface ParralaxSection {
-  id: string,
+export interface ParallaxSectionProps {
   images: ParallaxImage[],
   children: ReactNode | ReactNode[]
 }
 
-export const ParralaxSection: FC<ParralaxSection> = ({ id, images, children }) => {
+export const ParallaxSection: FC<ParallaxSectionProps> = ({ images, children }) => {
   const theme = useTheme();
   return (
     <>
@@ -39,12 +40,12 @@ export const ParralaxSection: FC<ParralaxSection> = ({ id, images, children }) =
               key={imageKey}
               src={image.src}
               alt={image.description}
-              style={{ transform: `translateZ(${image.perspective}) scale(${image.scale})` }}
+              style={{ transform: `translateZ(${image.perspective}) scaleX(${image.scaleX}) scaleY(${image.scaleY})`}}
             />
           )
         })}
       </header>
-      <section id={id} className={`parralax-section-${theme}`}>
+      <section className={`parralax-section-${theme}`}>
         {children}
       </section>
     </>

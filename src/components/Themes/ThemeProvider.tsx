@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 
 /* sass */
-import '../sass/_components.scss';
+import './_theme_provider.scss';
 
 /* exports */
 export type Theme = 'light' | 'dark';

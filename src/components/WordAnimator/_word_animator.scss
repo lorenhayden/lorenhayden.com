@@ -1,0 +1,26 @@
+@import '../../sass/animations';
+@import '../../sass/themes';
+
+@each $name, $theme in $themes {
+  .word-animator-#{$name} {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 50px;
+    color: map-get($theme, primary-fg);
+    transition: 1s font-size;
+
+    @media(max-width: 1536px) {
+      font-size: 40px;
+      transition: 1s font-size;
+    }
+
+    @media(max-width: 1024px) {
+      font-size: 30px;
+      transition: 1s font-size;
+    }
+
+    @media(max-width: 512px) {
+      font-size: 20px;
+      transition: 1s font-size;
+    }
+  }
+}

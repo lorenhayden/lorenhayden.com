@@ -1,12 +1,12 @@
 /* imports */
 import { FC, ReactNode, useState, useEffect } from 'react';
-import { useTheme } from './ThemeProvider';
+import { useTheme } from '../Themes/ThemeProvider';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 /* sass */
-import '../sass/_components.scss';
+import './_sidebar.scss';
 
 /* interfaces */
 interface SidebarButtonProps {

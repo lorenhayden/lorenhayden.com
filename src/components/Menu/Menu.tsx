@@ -1,13 +1,12 @@
 /* imports */
 import { FC, ReactNode } from 'react'
 import { useNavigate } from 'react-router-dom';
-import { useTheme, useThemeColors } from '../components/ThemeProvider';
+import { useTheme } from '../Themes/ThemeProvider';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 /* sass */
-import '../sass/_components.scss'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
+import './_menu.scss';
 
 /* exports */
 export interface MenuProps {
@@ -32,7 +31,6 @@ const Menu: FC<MenuProps> = ({ children }) => {
 export const MenuItem: FC<MenuItemProps> = (props) => {
   const navigate = useNavigate()
   const theme = useTheme()
-  const colors = useThemeColors(theme);
   const activate = (props.url === window.location.pathname)
   let activeControl = undefined;
   if (activate) {
@@ -40,8 +38,8 @@ export const MenuItem: FC<MenuItemProps> = (props) => {
   }
   return (
     <li className={`menu-item-${theme}`} onClick={() => navigate(props.url)}>
-      <FontAwesomeIcon icon={props.icon} onClick={() => navigate(props.url)} style={{color: activate === true ? colors.secondaryHoverForeColor : colors.primaryForeColor}} />
-      <a href={props.url} style={{color: activate === true ? colors.secondaryHoverForeColor : colors.primaryForeColor}}>{props.caption}</a>
+      <FontAwesomeIcon icon={props.icon} onClick={() => navigate(props.url)} />
+      <a href={props.url}>{props.caption}</a>
       <i />
       {activeControl}
     </li>

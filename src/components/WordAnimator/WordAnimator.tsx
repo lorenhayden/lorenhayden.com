@@ -1,9 +1,9 @@
 /* imports */
 import { FC, useState, useEffect } from 'react';
-import { useTheme } from './ThemeProvider';
+import { useTheme } from '../Themes/ThemeProvider';
 
 /* sass */
-
+import './_word_animator.scss';
 
 interface WordAnimatorProps {
   words: string[],

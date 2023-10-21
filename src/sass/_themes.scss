@@ -11,18 +11,16 @@
 }
 
 $themes: (
-  light: (
-    primary-fg: #333333,
+  light: (primary-fg: #03d9ff,
     primary-bg: #ffffff,
     primary-hover-fg: white,
-    primary-hover-bg: linear-gradient(to bottom, #333333, #555555),
+    primary-hover-bg: linear-gradient(to bottom, orange, orangered),
     secondary-fg: #555555,
     secondary-bg: #CFCFCF,
     secondary-hover-fg: white,
     sercondary-hover-bg: linear-gradient(to bottom, #336699, #114477),
   ),
-  dark: (
-    primary-fg: #C0C0C0,
+  dark: (primary-fg: #C0C0C0,
     primary-bg: #222222,
     primary-hover-fg: white,
     primary-hover-bg: linear-gradient(to bottom, #C0C0C0, #333333),
@@ -32,4 +30,3 @@ $themes: (
     sercondary-hover-bg: linear-gradient(to bottom, #333333, #555555),
   )
 );
-
