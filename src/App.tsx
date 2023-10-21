@@ -4,6 +4,7 @@ import Parallax, { ParallaxSection, ParallaxImage } from './components/Parallax/
 import { faHome, faList, faChartSimple, faAddressCard } from "@fortawesome/free-solid-svg-icons";
 import Menu, { MenuItem } from './components/Menu/Menu';
 import Sidebar, { SidebarButton } from './components/Sidebar/Sidebar';
+import Cursor from './components/Cursor/Cursor';
 
 
 /* views */
@@ -20,6 +21,7 @@ function App() {
   const theme = useTheme();
   return (
     <ThemeProvider theme={theme}>
+      <Cursor />
       <Menu>
         <MenuItem icon={faHome} url="#home" caption="Home" />
         <MenuItem icon={faList} url="#experience" caption="Experience" />
