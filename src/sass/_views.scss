@@ -1,16 +1,23 @@
-@import "./animations";
-@import "./themes";
+@import './animations';
+@import './themes';
 
 @each $name, $theme in $themes {
+
   .view-#{$name} {
-    position: relative;
-    display: grid;
-    align-items: center;
-    justify-content: center;
+    z-index: 0;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: -467px;
+    left: -960px;
+    right: 0px;
+    bottom: 0px;
     width: 100dvw;
     height: 100dvh;
     color: map-get($theme, primary-fg);
-    background-color: map-get($theme, primary-bg);
-    transition: 1s background-color, color;
+    display: flex;
+    flex-flow: center;
+    justify-content: center;
+    align-items: center;
   }
 }

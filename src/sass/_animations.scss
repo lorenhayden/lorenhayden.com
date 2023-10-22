@@ -1,10 +1,324 @@
-@keyframes slide-in-top {
+/* rotate out left  animation */
+@keyframes rotate-out-left {
+
   0% {
-    top: var(--slide-in-top-start);
-    opacity: 0;
+    left: var(--rotate-out-left-start);
+    transform: rotateZ(360deg);
   }
+
   100% {
-    top: var(--slide-in-top-end);
-    opacity: 1;
+    left: var(--rotate-out-left-end);
+    transform: rotateZ(0deg);
   }
 }
+
+@-moz-keyframes rotate-out-left {
+  0% {
+    left: var(--rotate-out-left-start);
+    -o-transform: rotateZ(360deg);
+  }
+
+  100% {
+    left: var(--rotate-out-left-end);
+    -o-transform: rotateZ(0deg);
+  }
+}
+
+@-webkit-keyframes rotate-out-left {
+  0% {
+    left: var(--rotate-out-left-start);
+    -webkit-transform: rotateZ(360deg);
+  }
+
+  100% {
+    left: var(--rotate-out-left-end);
+    -webkit-transform: rotateZ(0deg);
+  }
+}
+
+@-o-keyframes rotate-out-left {
+  0% {
+    left: var(--rotate-out-left-start);
+    -o-transform: rotateZ(360deg);
+  }
+
+  100% {
+    left: var(--rotate-out-left-end);
+    -o-transform: rotateZ(0deg);
+  }
+}
+
+.rotate-out-left {
+  /* chrome  */
+  animation-name: rotate-out-left;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-direction: forwards;
+  animation-fill-mode: both;
+
+  /* mozilla */
+  -moz-animation-name: rotate-out-left;
+  -moz-animation-duration: 1s;
+  -moz-animation-timing-function: ease-in-out;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-direction: forwards;
+  -moz-animation-fill-mode: both;
+
+  /* safari */
+  -webkit-animation-name: rotate-out-left;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-direction: forwards;
+  -webkit-animation-fill-mode: both;
+
+  /* Opera */
+  -o-animation-name: rotate-out-left;
+  -o-animation-duration: 1s;
+  -o-animation-timing-function: ease-in-out;
+  -o-animation-iteration-count: 1;
+  -o-animation-direction: forwards;
+  -o-animation-fill-mode: both;
+}
+
+
+/* rotate-out-right animation */
+@keyframes rotate-out-right {
+
+  0% {
+    right: var(--rotate-out-right-start);
+    transform: rotateZ(360deg);
+  }
+
+  100% {
+    right: var(--rotate-out-right-end);
+    transform: rotateZ(0deg);
+  }
+}
+
+@-moz-keyframes rotate-out-right {
+  0% {
+    right: var(--rotate-out-right-start);
+    -o-transform: rotateZ(360deg);
+  }
+
+  100% {
+    right: var(--rotate-out-right-end);
+    -o-transform: rotateZ(0deg);
+  }
+}
+
+@-webkit-keyframes rotate-out-right {
+  0% {
+    right: var(--rotate-out-right-start);
+    -webkit-transform: rotateZ(360deg);
+  }
+
+  100% {
+    right: var(--rotate-out-right-end);
+    -webkit-transform: rotateZ(0deg);
+  }
+}
+
+@-o-keyframes rotate-out-right {
+  0% {
+    right: var(--rotate-out-right-start);
+    -o-transform: rotateZ(360deg);
+  }
+
+  100% {
+    right: var(--rotate-out-right-end);
+    -o-transform: rotateZ(0deg);
+  }
+}
+
+.rotate-out-right {
+  /* chrome  */
+  animation-name: rotate-out-right;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-direction: forwards;
+  animation-fill-mode: both;
+
+  /* mozilla */
+  -moz-animation-name: rotate-out-right;
+  -moz-animation-duration: 1s;
+  -moz-animation-timing-function: ease-in-out;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-direction: forwards;
+  -moz-animation-fill-mode: both;
+
+  /* safari */
+  -webkit-animation-name: rotate-out-right;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-direction: forwards;
+  -webkit-animation-fill-mode: both;
+
+  /* Opera */
+  -o-animation-name: rotate-out-right;
+  -o-animation-duration: 1s;
+  -o-animation-timing-function: ease-in-out;
+  -o-animation-iteration-count: 1;
+  -o-animation-direction: forwards;
+  -o-animation-fill-mode: both;
+}
+
+/* scale-out animation */
+@keyframes scale-out {
+
+  0% {
+    transform: scale(0) rotate(360deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@-moz-keyframes scale-out {
+  0% {
+    -o-transform: scale(0);
+  }
+
+  100% {
+    -o-transform: scale(1);
+  }
+}
+
+@-webkit-keyframes scale-out {
+  0% {
+    -webkit-transform: scale(0);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+  }
+}
+
+@-o-keyframes scale-out {
+  0% {
+    -o-transform: scale(0);
+  }
+
+  100% {
+    -o-transform: scale(1);
+  }
+}
+
+.scale-out {
+  /* chrome  */
+  animation-name: scale-out;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-direction: forwards;
+  animation-fill-mode: both;
+
+  /* mozilla */
+  -moz-animation-name: scale-out;
+  -moz-animation-duration: 1s;
+  -moz-animation-timing-function: ease-in-out;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-direction: forwards;
+  -moz-animation-fill-mode: both;
+
+  /* safari */
+  -webkit-animation-name: scale-out;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-direction: forwards;
+  -webkit-animation-fill-mode: both;
+
+  /* Opera */
+  -o-animation-name: scale-out;
+  -o-animation-duration: 1s;
+  -o-animation-timing-function: ease-in-out;
+  -o-animation-iteration-count: 1;
+  -o-animation-direction: forwards;
+  -o-animation-fill-mode: both;
+}
+
+
+/* scale-in animation */
+@keyframes scale-in {
+
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  100% {
+    transform: scale(0) rotate(360deg);
+  }
+}
+
+@-moz-keyframes scale-in {
+  0% {
+    -o-transform: scale(1);
+  }
+
+  100% {
+    -o-transform: scale(0);
+  }
+}
+
+@-webkit-keyframes scale-in {
+  0% {
+    -webkit-transform: scale(1);
+  }
+
+  100% {
+    -webkit-transform: scale(0);
+  }
+}
+
+@-o-keyframes scale-in {
+  0% {
+    -o-transform: scale(1);
+  }
+
+  100% {
+    -o-transform: scale(0);
+  }
+}
+
+.scale-in {
+  /* chrome  */
+  animation-name: scale-in;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-direction: forwards;
+  animation-fill-mode: both;
+
+  /* mozilla */
+  -moz-animation-name: scale-in;
+  -moz-animation-duration: 1s;
+  -moz-animation-timing-function: ease-in-out;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-direction: forwards;
+  -moz-animation-fill-mode: both;
+
+  /* safari */
+  -webkit-animation-name: scale-in;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-direction: forwards;
+  -webkit-animation-fill-mode: both;
+
+  /* Opera */
+  -o-animation-name: scale-in;
+  -o-animation-duration: 1s;
+  -o-animation-timing-function: ease-in-out;
+  -o-animation-iteration-count: 1;
+  -o-animation-direction: forwards;
+  -o-animation-fill-mode: both;
+}
+
+
+

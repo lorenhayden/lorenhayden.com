@@ -1,15 +1,11 @@
 /* imports */
-import { useTheme } from "../../components/Themes/ThemeProvider";
-
-/* sass */
-import "../../sass/_views.scss";
+import { Html } from "@react-three/drei";
 
 const Contact = () => {
-  const theme = useTheme();
   return (
-    <div id="contact" className={`view-${theme}`}>
+    <Html>
       [Contact]
-    </div>
+    </Html>
   )
 }
 

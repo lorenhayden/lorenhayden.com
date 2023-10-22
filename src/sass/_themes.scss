@@ -1,3 +1,4 @@
+@import './animations';
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
 
@@ -30,3 +31,137 @@ $themes: (
     sercondary-hover-bg: linear-gradient(to bottom, #03e2ff, #007180),
   )
 );
+
+
+@each $name, $theme in $themes {
+
+  canvas {
+    position: absolute;
+    width: 100dvw;
+    height: 100dvh;
+    transition: 1s background-color;
+  }
+
+  .theme-picker-#{$name} {
+    --rotate-out-right-start: -60px;
+    --rotate-out-right-end: 0px;
+
+    z-index: 1;
+    cursor: pointer;
+    position: absolute;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    top: 25px;
+    right: 0px;
+    width: 50px;
+    height: 50px;
+    color: map-get($theme, secondary-fg);
+    background-color: map-get($theme, secondary-bg);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 5px map-get($theme, primary-fg);
+
+    &:hover {
+      background-color: darken(map-get($theme, secondary-bg), 10%);
+
+      svg {
+        color: darken(map-get($theme, secondary-fg), 10%);
+      }
+    }
+
+    svg {
+      font-size: 30px;
+    }
+  }
+
+  .menu-bars-#{$name} {
+    /* animation */
+    --rotate-out-left-start: -60px;
+    --rotate-out-left-end: 0px;
+    
+    cursor: pointer;
+    z-index: 1;
+    position: absolute;
+    top: 25px;
+    left: var(--rotate-out-left-start);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0 0 5px map-get($theme, primary-fg);
+    background-color: map-get($theme, secondary-bg);
+
+    &:hover {
+      background-color: darken(map-get($theme, secondary-bg), 10%);
+
+      svg {
+        color: darken(map-get($theme, secondary-fg), 10%);
+
+      }
+    }
+
+    svg {
+      font-size: 25px;
+      position: absolute;
+      color: map-get($theme, secondary-fg);
+    }
+  }
+
+  .menu-#{$name} {
+    z-index: 1;
+    position: absolute;
+    top: 90px;
+    left: 0px;
+    height: auto;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: map-get($theme, secondary-bg);
+    box-shadow: 0 0 5px map-get($theme, primary-fg);
+    transform: scale(0) rotate(360deg);
+
+    li {
+      list-style: none;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: flex-start;
+      
+      &:hover {
+        cursor: pointer;
+        background-color: darken(map-get($theme, secondary-bg), 10%);
+      }
+
+      .menu-item-icon-#{$name} {
+        pointer-events: none;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+        color: map-get($theme, secondary-fg);
+      }
+
+      .menu-item-caption-#{$name} {
+        pointer-events: none;
+        padding-right: 20px;
+        text-transform: uppercase;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: flex-start;
+        width: auto;
+        height: 50px;
+        color: map-get($theme, secondary-fg);
+      }
+
+    }
+  }
+
+}
