@@ -28,6 +28,9 @@ function App() {
   const onHamburgerChanged = (expanded: boolean) => {
     setSidebarExpanded(expanded);
   }
+  const onSidebarItemClicked = ( expanded: boolean ) => {
+    setSidebarExpanded(expanded);
+  }
   return (
     <ThemePicker onThemeChanged={onThemeChanged}>
       <Hamburger expanded={sidebarexpanded} onChanged={onHamburgerChanged} />
@@ -42,10 +45,10 @@ function App() {
         </header>
         <div className={`app-content-${theme.name}`}>
           <Sidebar expanded={sidebarexpanded}>
-            <SidebarItem icon={faHome} caption="home" url="#home" />
-            <SidebarItem icon={faList} caption="experience" url="#experience" />
-            <SidebarItem icon={faChartSimple} caption="skills" url="#skills" />
-            <SidebarItem icon={faAddressCard} caption="contact" url="#contact" />
+            <SidebarItem icon={faHome} caption="home" url="#home" onChanged={onSidebarItemClicked} />
+            <SidebarItem icon={faList} caption="experience" url="#experience" onChanged={onSidebarItemClicked} />
+            <SidebarItem icon={faChartSimple} caption="skills" url="#skills" onChanged={onSidebarItemClicked} />
+            <SidebarItem icon={faAddressCard} caption="contact" url="#contact" onChanged={onSidebarItemClicked} />
           </Sidebar>
           {/* <Home />
           <Experience />

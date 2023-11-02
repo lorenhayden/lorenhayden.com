@@ -18,11 +18,12 @@ type SidebarProps = {
 type SidebarItemProps = {
   icon: IconProp,
   caption: string,
-  url?: string
+  url?: string,
+  onChanged?: (expanded: boolean) => void;
 }
-const Sidebar: FC<SidebarProps> = ({ children, expanded }) => {
+const Sidebar: FC<SidebarProps> = ({ children, expanded}) => {
   const theme = useTheme();
-  const sideBarClassName = (expanded === true ) ? `side-bar-${theme.name} side-bar-expanded-${theme.name}` : `side-bar-${theme.name}`;
+  const sideBarClassName = (expanded === true) ? `side-bar-${theme.name} side-bar-expanded-${theme.name}` : `side-bar-${theme.name}`;
   return (
     <div className={sideBarClassName}>
       {children}
@@ -30,10 +31,12 @@ const Sidebar: FC<SidebarProps> = ({ children, expanded }) => {
   )
 }
 
-export const SidebarItem: FC<SidebarItemProps> = ({ icon, caption, url }) => {
+export const SidebarItem: FC<SidebarItemProps> = ({ icon, caption, url, onChanged }) => {
   const theme = useTheme();
-  const onHandleClick = ( ) => {
-      
+  const onHandleClick = () => {
+    if( onChanged ) {
+      onChanged(false);
+    }
   }
   return (
     <a className={`side-bar-item-${theme.name}`} href={url} onClick={onHandleClick}>
