@@ -86,7 +86,7 @@ const ThemePicker: FC<ThemePickerProps> = (props) => {
   return (
     <ThemeContext.Provider value={theme}>
       <div className={`theme-picker-${theme.name}`} onClick={() => onSetTheme(theme.name === 'light' ? DarkTheme : LightTheme)}>
-        <FontAwesomeIcon icon={theme.name === 'light' ? faSun : faMoon} />
+        <FontAwesomeIcon className={`theme-picker-icon-${theme.name}`} icon={theme.name === 'light' ? faSun : faMoon} />
       </div>
       {props.children}
     </ThemeContext.Provider>

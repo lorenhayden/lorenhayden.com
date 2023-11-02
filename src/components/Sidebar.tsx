@@ -1,14 +1,17 @@
 /* imports */
-import { ReactNode, FC, useState } from 'react';
-import { useTheme } from './ThemePicker';
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { ReactNode, FC, useState } from 'react'
+import { IconProp } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useTheme } from './ThemePicker'
+
 
 /* sass */
-import "../sass/_sidebar.scss";
+import "../sass/_sidebar.scss"
 
+
+/* types */
 type SidebarProps = {
+  expanded: boolean,
   children?: ReactNode | ReactNode[]
 }
 
@@ -17,35 +20,22 @@ type SidebarItemProps = {
   caption: string,
   url?: string
 }
-
-const Sidebar: FC<SidebarProps> = ({ children }) => {
-  const [expanded, toggleMenu] = useState(false);
+const Sidebar: FC<SidebarProps> = ({ children, expanded }) => {
   const theme = useTheme();
-  const onToggleMenu = (expanded: boolean) => {
-    const sidebar = document.querySelector(`.app-side-bar-${theme.name}`)
-    if (sidebar) {
-      sidebar.classList.toggle('show', expanded);
-    }
-    toggleMenu(expanded);
-  }
+  const sideBarClassName = (expanded === true ) ? `side-bar-${theme.name} side-bar-expanded-${theme.name}` : `side-bar-${theme.name}`;
   return (
-    <>
-      <span className={`app-side-bar-hamburger-${theme.name}`} onClick={() => onToggleMenu(!expanded)}>
-        <FontAwesomeIcon icon={expanded === true ? faTimes : faBars} />
-      </span>
-      <nav className={`app-side-bar-${theme.name}`}>
-        {children}
-      </nav>
-    </>
+    <div className={sideBarClassName}>
+      {children}
+    </div>
   )
 }
 
 export const SidebarItem: FC<SidebarItemProps> = ({ icon, caption, url }) => {
   const theme = useTheme();
   return (
-    <a className={`app-side-bar-item-${theme.name}`} href={url} >
-      <FontAwesomeIcon className={`app-side-bar-item-icon-${theme.name}`} icon={icon} />
-      <span className={`app-side-bar-item-caption-${theme.name}`} >
+    <a className={`side-bar-item-${theme.name}`} href={url}>
+      <FontAwesomeIcon className={`side-bar-item-icon-${theme.name}`} icon={icon} />
+      <span className={`side-bar-item-caption-${theme.name}`}>
         {caption}
       </span>
     </a>

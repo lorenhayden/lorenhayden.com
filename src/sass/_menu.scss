@@ -8,7 +8,7 @@
     flex-flow: row nowrap;
     align-items: flex-end;
     justify-content: center;
-    height: var(--app-header-height-lg);
+    height: var(--app-header-height);
     width: 100dvw;
 
     .app-menu-item-#{$name} {
@@ -18,6 +18,10 @@
       border-bottom: solid 3pt transparent;
       transition: 0.5s border-bottom;
       margin-right: 10px;
+
+      @media(max-width: 768px){
+        pointer-events: none;
+      }
 
       &:hover {
         border-bottom: solid 3pt map-get($theme, primary-link-hover);
@@ -62,6 +66,7 @@
         letter-spacing: 5px;
         font-size: var(--app-font-size-lg);
         color: map-get($theme, primary-fg);
+        text-shadow: 0 0 10px map-get($theme, primary-fg);
         transition-property: font-size, color;
         transition-duration: 1s;
 

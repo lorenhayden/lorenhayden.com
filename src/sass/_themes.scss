@@ -12,18 +12,14 @@
 
     /* full screen size */
     --app-font-size-lg: 24px;
-    --app-header-height-lg: 70px;
-    --app-footer-height-lg: 70px;
+    --app-header-height: 70px;
+    --app-footer-height: 70px;
 
     /* medium screen size */
     --app-font-size-med: 20px;
-    --app-header-height-med: 60px;
-    --app-footer-height-med: 60px;
 
     /* small screen size */
     --app-font-size-sm: 18px;
-    --app-header-height-sm: 50px;
-    --app-footer-height-sm: 50px;
 }
 
 $themes: (
@@ -60,7 +56,6 @@ $themes: (
     right: 0px;
     width: 50px;
     height: 50px;
-    color: map-get($theme, secondary-fg);
     background-color: map-get($theme, secondary-bg);
     display: flex;
     flex-flow: column nowrap;
@@ -70,15 +65,16 @@ $themes: (
     transition: 1s color;
 
     &:hover {
-
-      svg {
+      .theme-picker-icon-#{$name} {
         color: map-get($theme, primary-link-hover);
         transition: 1s color;
       }
     }
 
-    svg {
-      font-size: 30px;
+    .theme-picker-icon-#{$name} {
+      font-size: var(--app-font-size-lg);
+      color: map-get($theme, secondary-fg);
+      transition: 1s color;
     }
   }
 
