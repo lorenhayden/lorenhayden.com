@@ -1,0 +1,89 @@
+@import "../src/sass/animations";
+@import "../src/sass/scroller";
+@import "../src/sass/themes";
+
+
+@each $name, $theme in $themes {
+  .app-#{$name} {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    color: map-get($theme, primary-fg);
+    background-color: map-get($theme, primary-bg);
+    transition: 0.5s background-color;
+
+    .app-header-#{$name} {
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      height: var(--app-header-height-lg);
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      justify-content: center;
+      transition: 0.5s height;
+
+      @media(max-width: 1365px) {
+        height: var(--app-header-height-med);
+        transition: 0.5s height;
+      }
+
+      @media(max-width: 1024px) {
+        height: var(--app-header-height-sm);
+        transition: 0.5s height;
+      }
+
+    }
+
+    .app-content-#{$name} {
+      position: absolute;
+      top: var(--app-header-height-lg);
+      left: 0px;
+      right: 0px;
+      bottom: var(--app-footer-height-lg);
+      display: flex;
+      flex-flow: column wrap;
+      align-items: center;
+      justify-content: center;
+
+      @media(max-width: 1365px) {
+        top: var(--app-header-height-med);
+        bottom: var(--app-footer-height-med);
+        transition: 0.5s height;
+      }
+
+      @media(max-width: 1024px) {
+        top: var(--app-header-height-sm);
+        bottom: var(--app-footer-height-sm);
+        transition: 0.5s height;
+      }
+
+    }
+
+    .app-footer-#{$name} {
+      position: fixed;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      height: var(--app-footer-height-lg);
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      justify-content: center;
+
+      @media(max-width: 1365px) {
+        height: var(--app-footer-height-med);
+        transition: 0.5s height;
+      }
+
+      @media(max-width: 1024px) {
+        height: var(--app-footer-height-sm);
+        transition: 0.5s height;
+      }
+
+    }
+  }
+}

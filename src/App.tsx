@@ -1,28 +1,22 @@
 // imports
 import { useState } from 'react';
-import { Canvas } from '@react-three/fiber'
-import { Routes, Route } from 'react-router-dom';
-import { faHome, faQuestion, faList, faChartSimple, faAddressCard } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faList, faChartSimple, faAddressCard } from '@fortawesome/free-solid-svg-icons';
+//import { faCodepen, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+
 
 /* components */
 import ThemePicker, { ThemeDefinition, getTheme } from './components/ThemePicker';
-import Menu, { MenuItem } from './components/Menu';
+import Menu, { MenuItem } from './components/Menu.tsx';
+import Sidebar, {SidebarItem} from './components/Sidebar.tsx';
 
-/* views */
-import Home from './views/Home/Home'
-import About from './views/About/About'
-import Experience from './views/Experience/Experience'
-import Skills from './views/Skills/Skills'
-import Contact from './views/Contact/Contact'
+// import Home from './Home.tsx';
+// import Experience from './Experience.tsx';
+// import Contact from './Contact.tsx';
+// import Skills from './Skills.tsx';
 
 /* sass */
-import './sass/_scroller.scss'
+import "./App.scss";
 
-const Lights = () => {
-  return (
-    <ambientLight />
-  )
-}
 
 function App() {
   const [theme, setTheme] = useState(getTheme());
@@ -31,24 +25,28 @@ function App() {
   }
   return (
     <ThemePicker onThemeChanged={onThemeChanged}>
-      <Canvas camera={{ position: [0, 5, 10] }} style={{ "position": "absolute", "width": "100dvw", "height": "100dvh" }} >
-        <color attach="background" args={[theme.primary.background]} />
-        <Lights />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/experience" element={<Experience />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </Canvas>
-      <Menu>
-        <MenuItem caption="Home" url="/" icon={faHome} />
-        <MenuItem caption="About" url="/about" icon={faQuestion} />
-        <MenuItem caption="Experience" url="/experience" icon={faList} />
-        <MenuItem caption="Skills" url="/skills" icon={faChartSimple} />
-        <MenuItem caption="Contact" url="/contact" icon={faAddressCard} />
-      </Menu>
+      <div className={`app-${theme.name}`}>
+        <header className={`app-header-${theme.name}`}>
+          <Menu>
+            <MenuItem icon={faHome} caption="home" url="#home"/>
+            <MenuItem icon={faList} caption="experience" url="#experience"/>
+            <MenuItem icon={faChartSimple} caption="skills" url="#skills"/>
+            <MenuItem icon={faAddressCard} caption="contact" url="#contact"/>
+          </Menu>
+          <Sidebar>
+            <SidebarItem icon={faHome} caption="home" url="#home"/>
+            <SidebarItem icon={faList} caption="experience" url="#experience"/>
+            <SidebarItem icon={faChartSimple} caption="skills" url="#skills"/>
+            <SidebarItem icon={faAddressCard} caption="contact" url="#contact"/>
+          </Sidebar>
+        </header>
+        <div className={`app-content-${theme.name}`}>
+          [Content]
+        </div>
+        <footer className={`app-footer-${theme.name}`}>
+          [Footer]
+        </footer>
+      </div>
     </ThemePicker>
   )
 }

@@ -1,0 +1,170 @@
+{
+  "name": "Loren Hayden",
+  "titles": [
+    "Full Stack Web Developer",
+    "Web Designer",
+    "API Developer",
+    "Digital Artist",
+    "Creative Mind"
+  ],
+  "experience": [
+    {
+      "company": "Toll Free Solutions",
+      "location": "Las Vegas, NV",
+      "title": "Senior Software Engineer",
+      "started": "Apr 2014",
+      "ended": "Sep 2023",
+      "tasks": []
+    },
+    {
+      "company": "ESP Solutions",
+      "location": "San Diego, CA",
+      "title": "Consultant",
+      "started": "Apr 2013",
+      "ended": "Jun 2013",
+      "tasks": []
+    },
+    {
+      "company": "Acrendo Medical Software",
+      "location": "San Diego, CA",
+      "title": "Software Engineer",
+      "started": "Oct 2012",
+      "ended": "Apr 2013",
+      "tasks": []
+    },
+    {
+      "company": "Icon Group Books, International",
+      "location": "San Diego, CA",
+      "title": "Software Engineer",
+      "started": "Dec 2010",
+      "ended": "Oct 2012",
+      "tasks": []
+    },
+    {
+      "company": "Vista Biologicals Corporation",
+      "location": "Carlsbad, CA",
+      "title": "Dev/Ops",
+      "started": "Dec 2009",
+      "ended": "Oct 2010",
+      "tasks": []
+    },
+    {
+      "company": "Hunter Ambrose",
+      "location": "San Diego, CA",
+      "title": "Web Developer",
+      "started": "Sep 2009",
+      "ended": "Dec 2009",
+      "tasks": []
+    },
+    {
+      "company": "Community Resource for Sciences",
+      "location": "San Diego, CA",
+      "title": "Web Developer",
+      "started": "Jan 2007",
+      "ended": "Jul 2009",
+      "tasks": []
+    },
+    {
+      "company": "Vista Biological Corporation",
+      "location": "San Diego, CA",
+      "title":"Dev/Ops",
+      "started": "Jan 2007",
+      "ended": "Nov 2008",
+      "tasks": []
+    },
+    {
+      "company": "Bikebandit",
+      "location": "San Diego, CA",
+      "title": "Software Engineer",
+      "started": "Mar 2007",
+      "ended": "Nov 2007",
+      "tasks": []
+    },
+    {
+      "company": "EDmin",
+      "location": "San Diego, CA",
+      "title": "Software Engineer",
+      "started": "Jan 2007",
+      "ended": "Mar 2007",
+      "tasks": []
+    },
+    {
+      "company": "End2End, Tech",
+      "location": "San Diego, CA",
+      "title": "Consultant",
+      "started": "Jan 2006",
+      "ended": "Jan 2007",
+      "tasks": []
+    },
+    {
+      "company": "Innova Systems, Inc.",
+      "location": "San Diego, CA",
+      "title": "Web Developer",
+      "started": "Mar 2005",
+      "ended": "Sep 2006",
+      "tasks": []
+    },
+    {
+      "company": "Capital One Auto Finance",
+      "location": "San Diego, CA",
+      "title": "Software Developer",
+      "started": "Sep 2004",
+      "ended": "Mar 2005",
+      "tasks": []
+    },
+    {
+      "company": "Advanced Network, Inc.",
+      "location": "San Diego, CA",
+      "title":"Dev/Ops",
+      "started": "May 2000",
+      "ended": "Sep 2004",
+      "tasks": []
+    },
+    {
+      "company": "EDPMI",
+      "location": "San Diego, CA",
+      "title": "Software Developer",
+      "started": "Jan 1997",
+      "ended": "May 2000",
+      "tasks": []
+    },
+    {
+      "company": "Computer Research Group",
+      "location": "San Diego, CA",
+      "title": "Junior Software Developer",
+      "started": "Dec 1997",
+      "ended": "Jan 1996",
+      "tasks": []
+    },
+    {
+      "company": "North Country Municipal Court",
+      "location": "San Diego, CA",
+      "title": "Computer Support",
+      "started": "Dec 1997",
+      "ended": "Sep 1996",
+      "tasks": []
+    },
+    {
+      "company": "United States Navy",
+      "location": "Okinawa, Japan",
+      "title": "ISC",
+      "started": "Mar 1991",
+      "ended": "Feb 1995",
+      "tasks": []
+    }
+  ],
+  "skills": {
+    "categories": [
+      "Languages",
+      "Operating Systems",
+      "Database Platforms",
+      "Software Applications",
+      "Cloud Services"
+    ],
+    "Languages": ["Javascript", "Python", "C#", "VB.NET", "VBA", "Lua", "C/C++"],
+    "Operating Systems": ["Windows", "Debian/Ubuntu"],
+    "Database Platforms": ["Microsoft SQL", "MySQL", "Postgres SQL"],
+    "Software Applications": ["Github", "Jira", "Confluence", "Bitbucket", "Docker", "Kubernetes", "Jenkins", "Chef"],
+    "Cloud Services": ["Google", "AWS", "Wasabi"]
+  }
+}

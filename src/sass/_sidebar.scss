@@ -1,0 +1,60 @@
+@import "./animations";
+@import "./scroller";
+@import "./themes";
+
+@each $name, $theme in $themes {
+
+  .app-side-bar-hamburger-#{$name} {
+    position: absolute;
+    top: 10px;
+    left: -100px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    color: map-get($theme, primary-fg);
+    background-color: map-get($theme, primary-bg);
+    font-size: 25px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0 0 10px map-get($theme, primary-fg);
+    transition-property: color;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+
+    @media(max-width: 768px) {
+      left: 0px;
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: map-get($theme, primary-link-hover);
+      transition-property: color;
+      transition-duration: 0.5s;
+      transition-timing-function: ease-in-out;
+    }
+  }
+
+  .app-side-bar-#{$name} {
+    display: none;
+
+  }
+
+  .app-side-bar-item-#{$name} {
+    position: relative;
+  }
+
+  .app-side-bar-item-icon-#{$name} {
+    font-size: var(--app-font-size-sm);
+  }
+
+  .app-side-bar-item-caption-#{$name} {
+    font-size: var(--app-font-size-sm);
+  }
+
+  .show {
+    left: 0px;
+  }
+}

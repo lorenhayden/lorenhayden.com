@@ -1,0 +1,36 @@
+@import "./animations";
+@import "./scroller";
+@import "./themes";
+
+@each $name, $theme in $themes {
+  .contact-#{$name} {
+    height: 100dvh;
+
+    div {
+      margin-top: 20px;
+      min-width: 500px;
+      min-height: 50px;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: flex-start;
+
+      svg {
+        border-radius: 5px;
+        font-size: 40px;
+      }
+
+      a {
+        margin-left: 20px;
+        font-size: 22px;
+        padding: 5px;
+        color: map-get($theme, primary-fg);
+        text-shadow: 0 0 10px map-get($theme, primary-fg);
+      }
+
+      span {
+        font-size: 0px;
+      }
+    }
+  }
+}

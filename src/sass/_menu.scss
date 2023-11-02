@@ -1,0 +1,89 @@
+@import "./animations";
+@import "./scroller";
+@import "./themes";
+
+@each $name, $theme in $themes {
+  .app-menu-#{$name} {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-end;
+    justify-content: center;
+    height: var(--app-header-height-lg);
+    width: 100dvw;
+
+    .app-menu-item-#{$name} {
+      padding: 10px;
+      text-decoration: none;
+      text-transform: uppercase;
+      border-bottom: solid 3pt transparent;
+      transition: 0.5s border-bottom;
+      margin-right: 10px;
+
+      &:hover {
+        border-bottom: solid 3pt map-get($theme, primary-link-hover);
+        transition: 0.5s border-bottom;
+
+        .app-menu-item-icon-#{$name} {
+          color: map-get($theme, primary-link-hover);
+          transition-property: color;
+          transition-duration: 1s;
+        }
+
+        .app-menu-item-caption-#{$name} {
+          text-shadow: none;
+          color: map-get($theme, primary-link-hover);
+          transition-property: color;
+          transition-duration: 1s;
+        }
+      }
+
+      .app-menu-item-icon-#{$name} {
+        margin-right: 10px;
+        font-size: var(--app-font-size-lg);
+        color: map-get($theme, primary-fg);
+        transition-property: font-size, color;
+        transition-duration: 1s;
+
+        @media(max-width: 136px) {
+          font-size: var(--app-font-size-med);
+          transition-property: font-size, color;
+          transition-duration: 1s;
+        }
+
+        @media(max-width: 1024px) {
+          font-size: 0px;
+          transition-property: font-size;
+          transition-duration: 1s;
+        }
+
+      }
+
+      .app-menu-item-caption-#{$name} {
+        letter-spacing: 5px;
+        font-size: var(--app-font-size-lg);
+        color: map-get($theme, primary-fg);
+        transition-property: font-size, color;
+        transition-duration: 1s;
+
+        @media(max-width: 1365px) {
+          font-size: var(--app-font-size-lg);
+          transition-property: font-size;
+          transition-duration: 1s;
+        }
+
+        @media(max-width: 1024px) {
+          font-size: var(--app-font-size-sm);
+          transition-property: font-size;
+          transition-duration: 1s;
+        }
+
+        @media(max-width: 768px) {
+          font-size: 0px;
+          transition-property: font-size;
+          transition-duration: 1s;
+        }
+
+      }
+    }
+  }
+}

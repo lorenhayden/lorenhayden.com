@@ -1,0 +1,85 @@
+@import "./animations";
+@import "./scroller";
+@import "./themes";
+
+@each $name, $theme in $themes {
+  .home-#{$name} {
+    height: 100dvh;
+
+    #name {
+      z-index: 2;
+      font-family: 'Comfortaa', sans-serif;
+      font-size: 80px;
+      margin-bottom: 25px;
+      text-shadow: 0 0 10px map-get($theme, primary-fg);
+      opacity: 0;
+      transition: 0.5s font-size;
+
+      @media(max-width: 1365px) {
+        font-size: 70px;
+        transition: 0.5s font-size;
+      }
+
+      @media(max-width: 1024px) {
+        font-size: 60px;
+        transition: 0.5s font-size;
+      }
+
+      @media(max-width: 768px) {
+        font-size: 50px;
+        transition: 0.5s font-size;
+      }
+
+      @media(max-width: 512px) {
+        font-size: 40px;
+        transition: 0.5s font-size;
+      }
+
+      @media(max-width: 320px) {
+        font-size: 30px;
+        transition: 0.5s font-size;
+      }
+
+    }
+
+    #title {
+      z-index: 2;
+      font-family: 'Orbitron', sans-serif;
+      margin-bottom: 25px;
+      font-size: 20px;
+      letter-spacing: 10px;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px map-get($theme, primary-fg);
+      opacity: 0;
+      transition: 0.5s font-size;
+
+      @media(max-width: 1365px) {
+        font-size: 14px;
+        transition: 0.5s font-size;
+      }
+
+      @media(max-width: 1024px) {
+        font-size: 12px;
+        transition: 0.5s font-size;
+      }
+    }
+
+    #download {
+      font-family: 'Comfortaa', sans-serif;
+      text-transform: uppercase;
+      text-decoration: none;
+      margin: 20px;
+      border-radius: 5px;
+      padding: 10px;
+      border: none;
+      color: map-get($theme, primary-button-fg);
+      background: map-get($theme, primary-button-bg);
+      box-shadow: 0 0 10px map-get($theme, primary-fg);
+      opacity: 0;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

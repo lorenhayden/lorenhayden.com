@@ -243,7 +243,6 @@
   -o-animation-fill-mode: both;
 }
 
-
 /* scale-in animation */
 @keyframes scale-in {
 
@@ -321,4 +320,44 @@
 }
 
 
+@keyframes fade-in {
 
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  /* chrome  */
+  animation-name: fade-in;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: both;
+}
+
+@keyframes fade-out {
+
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.fade-out {
+ /* chrome  */
+ animation-name: fade-out;
+ animation-duration: 1s;
+ animation-timing-function: ease-in-out;
+ animation-iteration-count: 1;
+ animation-direction: normal;
+ animation-fill-mode: both;
+}

@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 
 
-export const DEFAULT_THEME_NAME: string = "light";
+export const DEFAULT_THEME_NAME: string = "dark";
 
 export type ThemeColorPair = {
   foreground: string
@@ -85,7 +85,7 @@ const ThemePicker: FC<ThemePickerProps> = (props) => {
   }
   return (
     <ThemeContext.Provider value={theme}>
-      <div className={`theme-picker-${theme.name} rotate-out-right`} onClick={() => onSetTheme(theme.name === 'light' ? DarkTheme : LightTheme)}>
+      <div className={`theme-picker-${theme.name}`} onClick={() => onSetTheme(theme.name === 'light' ? DarkTheme : LightTheme)}>
         <FontAwesomeIcon icon={theme.name === 'light' ? faSun : faMoon} />
       </div>
       {props.children}
