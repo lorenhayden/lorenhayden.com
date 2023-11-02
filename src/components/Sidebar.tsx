@@ -32,8 +32,11 @@ const Sidebar: FC<SidebarProps> = ({ children, expanded }) => {
 
 export const SidebarItem: FC<SidebarItemProps> = ({ icon, caption, url }) => {
   const theme = useTheme();
+  const onHandleClick = ( ) => {
+      
+  }
   return (
-    <a className={`side-bar-item-${theme.name}`} href={url}>
+    <a className={`side-bar-item-${theme.name}`} href={url} onClick={onHandleClick}>
       <FontAwesomeIcon className={`side-bar-item-icon-${theme.name}`} icon={icon} />
       <span className={`side-bar-item-caption-${theme.name}`}>
         {caption}

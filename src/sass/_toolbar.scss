@@ -15,25 +15,38 @@
       flex-flow: row nowrap;
       align-items: center;
       justify-content: center;
-      margin-left: 10px;
+      margin-left: 25px;
       padding: 10px;
       width: 25px;
       height: 25px;
       border-radius: 5px;
       background: map-get($theme, secondary-bg);
       box-shadow: 0 0 10px map-get($theme, secondary-fg);
+      transition-property: box-shadow;
+      transition-duration: 0.5s;
+      transition-timing-function: ease-in-out;
+
+
       &:hover {
+        box-shadow: 0 0 10px map-get($theme, primary-link-hover);
+        transition-property: box-shadow;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
         .toolbar-button-icon-#{$name}{
           color: map-get($theme, primary-link-hover);
-          transition: 1s color;
+          transition-property: color;
+          transition-duration: 0.5s;
+          transition-timing-function: ease-in-out;
         }
       }
       .toolbar-button-icon-#{$name} {
         pointer-events: none;
         font-size: var(--app-font-size-lg);
         color: map-get($theme, secondary-fg);
-        transition: 1s color;
-      }
+        transition-property: color;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+    }
     }
   }
 }

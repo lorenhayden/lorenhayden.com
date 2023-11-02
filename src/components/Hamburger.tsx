@@ -1,5 +1,5 @@
 /* imports */
-import { ReactNode, FC, useState, useEffect } from 'react';
+import { FC, useEffect } from 'react';
 import { useTheme } from './ThemePicker';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
@@ -7,27 +7,22 @@ import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 /* sass */
 import "../sass/_hamburger.scss";
 
-const initialState = false;
-
 type HamburgerProps = {
+  expanded?: boolean,
   onChanged?: (expanded: boolean) => void
-  children?: ReactNode | ReactNode[]
 }
 
-const Hamburger: FC<HamburgerProps> = ({ children, onChanged }) => {
+const Hamburger: FC<HamburgerProps> = ({ expanded, onChanged }) => {
   const theme = useTheme();
-  const [expanded, toggleExpanded] = useState(initialState);
   const onToggle = (expanded: boolean) => {
     if (onChanged) {
-      onChanged(expanded);
+      onChanged(expanded ?? false);
     }
-    toggleExpanded(expanded);
   }
   const onHandleResize = ( ) => {
     if (onChanged) {
-      onChanged(expanded);
+      onChanged(expanded ?? false);
     }
-    toggleExpanded(false);
   }
   useEffect(() => {
     window.addEventListener('resize', onHandleResize);
@@ -37,8 +32,7 @@ const Hamburger: FC<HamburgerProps> = ({ children, onChanged }) => {
   }, [])
   return (
     <div className={`hamburger-${theme.name}`} onClick={() => onToggle(!expanded)}>
-      <FontAwesomeIcon icon={expanded === true ? faTimes : faBars} />
-      {children}
+      <FontAwesomeIcon className={`hamburger-icon-${theme.name}`} icon={expanded === true ? faTimes : faBars} />
     </div>
   )
 }

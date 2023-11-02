@@ -30,7 +30,7 @@ function App() {
   }
   return (
     <ThemePicker onThemeChanged={onThemeChanged}>
-      <Hamburger onChanged={onHamburgerChanged} />
+      <Hamburger expanded={sidebarexpanded} onChanged={onHamburgerChanged} />
       <div className={`app-${theme.name}`}>
         <header className={`app-header-${theme.name}`}>
           <Menu>

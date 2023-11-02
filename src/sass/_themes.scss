@@ -26,8 +26,8 @@ $themes: (
   light: (primary-fg: #111111,
     primary-bg: #f1f1f1,
     primary-button-fg: white,
-    primary-link-hover: #ffae00,
-    primary-button-bg: linear-gradient(#ffae00, #865c00),
+    primary-link-hover: #00aeff,
+    primary-button-bg: linear-gradient(#00aeff, #005f8b),
     secondary-fg: #333333,
     secondary-bg: #e1e1e1,
     secondary-tile-fg: #00aeff,
@@ -35,8 +35,8 @@ $themes: (
   dark: (primary-fg: white,
     primary-bg: #111111,
     primary-button-fg: white,
-    primary-link-hover: #0059ff,
-    primary-button-bg: linear-gradient(#0059ff, #002e83),
+    primary-link-hover: #00aeff,
+    primary-button-bg: linear-gradient(#00aeff, #005f8b),
     secondary-fg: #f1f1f1,
     secondary-bg: #333333,
     secondary-tile-fg: #00aeff
@@ -47,34 +47,45 @@ $themes: (
 @each $name, $theme in $themes {
 
   .theme-picker-#{$name} {
+    --animate-shadow-start-color: map-get($theme, primary-link-hover);
+    --animate-shadow-end-color: map-get($theme, secondary-fg);
     z-index: 1;
     cursor: pointer;
     position: absolute;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-    top: 10px;
+    top: 125px;
     right: 0px;
-    width: 50px;
-    height: 50px;
+    width: 25px;
+    height: 25px;
+    padding: 10px;
     background-color: map-get($theme, secondary-bg);
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 0 10px map-get($theme, primary-fg);
-    transition: 1s color;
+    box-shadow: 0 0 10px map-get($theme, secondary-fg);
+    transition: 0.5s box-shadow;
+
+    @media(max-width: 768px){
+      top: 10px;
+      transition: 1s top;
+    }
 
     &:hover {
+      box-shadow: 0 0 10px map-get($theme, primary-link-hover);
+      transition: 0.5s box-shadow;
+
       .theme-picker-icon-#{$name} {
         color: map-get($theme, primary-link-hover);
-        transition: 1s color;
+        transition: 0.5 color;
       }
     }
 
     .theme-picker-icon-#{$name} {
       font-size: var(--app-font-size-lg);
       color: map-get($theme, secondary-fg);
-      transition: 1s color;
+      transition: 0.5 color;
     }
   }
 

@@ -13,9 +13,8 @@
     justify-content: flex-start;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-    background-color: map-get($theme, secondary-bg);
     box-shadow: 0 0 10px map-get($theme, secondary-fg);
-    transition-property: 0 left;
+    transition-property: left;
     transition-duration: 1s;
     transition-timing-function: ease-in-out;
 
@@ -24,17 +23,37 @@
       text-decoration: none;
       padding: 10px;
       min-width: 200px;
+      background-color: map-get($theme, secondary-bg);
+      transition-property: background-color;
+      transition-duration: 0.5s;
+      transition-timing-function: ease-in-out;
+
+      &:first-child {
+        border-top-right-radius: 5px;
+      }
+
+      &:last-child {
+        border-bottom-right-radius: 5px;
+      }
 
       &:hover {
-        &:first-child {
-          border-top-right-radius: 5px;
-        }
-
-        &:last-child {
-          border-bottom-right-radius: 5px;
-        }
-
         background-color: darken(map-get($theme, secondary-bg), 10%);
+        transition-property: background-color;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+   
+        .side-bar-item-icon-#{$name} {
+          color: map-get($theme, primary-link-hover);  
+          transition: 0.5 color ease-in-out;
+        }
+
+        .side-bar-item-caption-#{$name} {
+          color: map-get($theme, primary-link-hover);  
+          transition-property: color;
+          transition-duration: 0.5s;
+          transition-timing-function: ease-in-out;
+        }
+
       }
 
       .side-bar-item-icon-#{$name} {
@@ -42,20 +61,26 @@
         margin-right: 10px;
         font-size: var(--app-font-size-sm);
         color: map-get($theme, secondary-fg);
+        transition-property: color;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
       }
 
       .side-bar-item-caption-#{$name} {
         pointer-events: none;
         font-size: var(--app-font-size-sm);
         color: map-get($theme, secondary-fg);
-      }
+        transition-property: color;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+    }
     }
   }
 
   .side-bar-expanded-#{$name} {
     left: 0px;
-    transition-property: 0 left;
+    transition-property: left;
     transition-duration: 1s;
-    transition-timing-function: ease-in-out;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 }
