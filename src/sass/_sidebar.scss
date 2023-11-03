@@ -4,8 +4,9 @@
 
 @each $name, $theme in $themes {
   .side-bar-#{$name} {
+    z-index: 2;
     position: absolute;
-    top: 0px;
+    top: var(--app-header-height);
     left: -300px;
     display: flex;
     flex-flow: column nowrap;

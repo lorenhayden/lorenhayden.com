@@ -4,81 +4,150 @@
 
 @each $name, $theme in $themes {
   .home-#{$name} {
-    height: 100dvh;
-
-    #name {
-      z-index: 2;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 100dvw;
+    min-height: 100vh;
+    
+    .home-name-#{$name} {
+      --name-font-size: 80px;
+      --name-font-offset: 8px;
       font-family: 'Comfortaa', sans-serif;
-      font-size: 80px;
-      margin-bottom: 25px;
-      text-shadow: 0 0 10px map-get($theme, primary-fg);
-      opacity: 0;
-      transition: 0.5s font-size;
+      font-size: var(--name-font-size);
+      color: map-get($theme, primary-fg);
+      transition-property: font-size;
+      transition-duration: 0.5s;
+      transition-timing-function: ease-in-out;
 
       @media(max-width: 1365px) {
-        font-size: 70px;
-        transition: 0.5s font-size;
+        font-size: calc(var(--name-font-size) - (var(--name-font-offset) * 1));
+        transition-property: font-size;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
       }
 
-      @media(max-width: 1024px) {
-        font-size: 60px;
-        transition: 0.5s font-size;
+      @media(max-width: 1024px){
+        font-size: calc(var(--name-font-size) - (var(--name-font-offset) * 2));
+        transition-property: font-size;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
       }
 
       @media(max-width: 768px) {
-        font-size: 50px;
-        transition: 0.5s font-size;
+        font-size: calc(var(--name-font-size) - (var(--name-font-offset) * 3));
+        transition-property: font-size;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
       }
 
       @media(max-width: 512px) {
-        font-size: 40px;
-        transition: 0.5s font-size;
+        font-size: calc(var(--name-font-size) - (var(--name-font-offset) * 4));
+        transition-property: font-size;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+      }
+
+
+      @media(max-width: 320px) {
+        font-size: calc(var(--name-font-size) - (var(--name-font-offset) * 5));
+        transition-property: font-size;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+      }
+
+    }
+    
+    .home-title-#{$name} {
+      --title-font-size: var(--app-font-size-lg);
+      --title-font-offset: 2px;
+      margin-top: 50px;
+      text-transform: uppercase;
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: 10px;
+      color: map-get($theme, primary-fg);
+      font-size: var(--app-font-size-lg);
+
+      @media(max-width: 1365px) {
+        font-size: calc(var(--title-font-size) - (var(--title-font-offset) * 1));
+        letter-spacing: 8px;
+        transition-property: font-size;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+      }
+
+      @media(max-width: 1024px){
+        font-size: calc(var(--title-font-size) - (var(--title-font-offset) * 2));
+        letter-spacing: 6px;
+        transition-property: font-size;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+      }
+
+      @media(max-width: 768px) {
+        font-size: calc(var(--title-font-size) - (var(--title-font-offset) * 3));
+        transition-property: font-size;
+        letter-spacing: 4px;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+      }
+
+      @media(max-width: 512px) {
+        font-size: calc(var(--title-font-size) - (var(--title-font-offset) * 4));
+        letter-spacing: 2px;
+        transition-property: font-size;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
       }
 
       @media(max-width: 320px) {
-        font-size: 30px;
-        transition: 0.5s font-size;
+        font-size: calc(var(--title-font-size) - (var(--title-font-offset) * 5));
+        letter-spacing: 1px;
+        transition-property: font-size;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
       }
 
     }
-
-    #title {
-      z-index: 2;
-      font-family: 'Orbitron', sans-serif;
-      margin-bottom: 25px;
-      font-size: 20px;
-      letter-spacing: 10px;
-      text-transform: uppercase;
-      text-shadow: 0 0 10px map-get($theme, primary-fg);
-      opacity: 0;
-      transition: 0.5s font-size;
-
-      @media(max-width: 1365px) {
-        font-size: 14px;
-        transition: 0.5s font-size;
-      }
-
-      @media(max-width: 1024px) {
-        font-size: 12px;
-        transition: 0.5s font-size;
-      }
-    }
-
-    #download {
-      font-family: 'Comfortaa', sans-serif;
-      text-transform: uppercase;
+    
+    .home-download-#{$name} {
       text-decoration: none;
-      margin: 20px;
+      margin-top: 50px;
+      font-family: 'Comfortaa', sans-serif;
+      font-size: var(--app-font-size-lg);
       border-radius: 5px;
       padding: 10px;
-      border: none;
       color: map-get($theme, primary-button-fg);
       background: map-get($theme, primary-button-bg);
       box-shadow: 0 0 10px map-get($theme, primary-fg);
-      opacity: 0;
+      transition-property: font-size;
+      transition-duration: 0.5s;
+      transition-timing-function: ease-in-out;
+
+      @media(max-width: 1356px){
+        font-size: var(--app-font-size-med);
+        transition-property: font-size;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+      }
+
+      @media(max-width: 1024px){
+        font-size: var(--app-font-size-sm);
+        transition-property: font-size;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+      }
+
+      @media(max-width: 1024px){
+        font-size: calc(var(--app-font-size-sm) - 2px);
+        transition-property: font-size;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+      }
 
       &:hover {
-        cursor: pointer;
+        box-shadow: 0 0 10px map-get($theme, primary-link-hover);
       }
     }
   }

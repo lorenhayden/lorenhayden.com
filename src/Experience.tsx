@@ -49,25 +49,25 @@ const Experience = () => {
   }, [])
   return (
     <section id="experience" className={`experience-${theme.name}`}>
-      <h1 id="header">Work Experience</h1>
-      <div id="content">
+      <h1 className={`experience-header-${theme.name}`}>Work Experience</h1>
+      <div className={`experience-history-${theme.name}`}>
         {experience.map((item, index) => {
           const itemKey = `company-${index}`
-          const experienceClass = (index % 2 === 0) ? 'experience-tile' : 'experience-tile-alt';
+          const experienceTileClass = (index % 2 === 0) ? `experience-history-tile-${theme.name}` : `experience-history-tile-alt-${theme.name}`;
           return (
-            <div key={itemKey} className={experienceClass}>
+            <div key={itemKey} className={experienceTileClass}>
               <ul>
-                <li>
+                <li className={`experience-company-${theme.name}`}>
                     {`${item['company']}`}
                 </li>
-                <li>
+                <li className={`experience-title-location-${theme.name}`}>
                   {`${item['title']} - ${item['location']}`}
                 </li>
-                <li>
+                <li className={`experience-started-ended-${theme.name}`}>
                   {`${item['started']} - ${item['ended']}`}
                 </li>
-                <li>
-                  <button>More</button>
+                <li className={`experience-show-more-${theme.name}`}>
+                  <button className={`experience-show-more-button-${theme.name}`}>More</button>
                 </li>
               </ul>
             </div>

@@ -5,89 +5,10 @@
 @each $name, $theme in $themes {
   .experience-#{$name} {
     display: flex;
-
-    #header {
-      position: relative;
-      border-radius: 5px;
-      padding: 10px;
-      color: map-get($theme, secondary-fg);
-      box-shadow: 0 0 10px map-get($theme, secondary-fg);
-      text-shadow: 0 0 10px map-get($theme, secondary-fg);
-      border: solid 3pt lighten(map-get($theme, secondary-fg), 25%);
-      letter-spacing: 10px;
-    }
-
-    #content {
-      position: relative;
-      display: flex;
-      flex-flow: column wrap;
-      min-width: 50dvw;
-
-      div {
-        padding: 10px;
-        padding-top: 20px;
-
-        ul {
-          margin: 10px;
-          padding: 10px;
-          border-radius: 5px;
-          border: solid 3pt lighten(map-get($theme, secondary-fg), 25%);
-          box-shadow: 0px 0px 10px darken(map-get($theme, secondary-fg), 25%);
-
-          li {
-            list-style: none;
-            padding: 10px;
-            font-family: 'Comfortaa', sans-serif;
-
-            &:nth-child(1) {
-              letter-spacing: 2px;
-              font-size: 20px;
-              color: map-get($theme, secondary-tile-fg);
-              text-shadow: 0 0 10px map-get($theme, secondary-title-fg);
-            }
-
-            &:nth-child(3) {
-              font-family: 'Orbitron', sans-serif;
-              text-transform: uppercase;
-            }
-
-            &:nth-child(4) {
-              display: flex;
-              flex-flow: row nowrap;
-              align-items: center;
-              justify-content: center;
-              button {
-                text-transform: lowercase;
-                border-radius: 5px;
-                padding: 10px;
-                font-family: 'Comfortaa', sans-serif;
-                font-size: 16px;
-                border: none;
-                color: map-get($theme, secondary-tile-fg);
-                background-color: transparent;
-                &:hover {
-                  cursor: pointer;
-                  text-decoration: underline;
-                }
-              }
-            }
-
-          }
-        }
-      }
-
-      .experience-tile {
-        margin-left: 0px;
-        border-right: solid 3pt lighten(map-get($theme, secondary-fg), 25%);
-        width: calc(50% - 20px);
-      }
-
-      .experience-tile-alt {
-        margin-left: 50%;
-        border-left: solid 3pt lighten(map-get($theme, secondary-fg), 25%);
-      }
-
-    }
-
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 100vw;
+    min-height: 170vh;
+    border: dashed 2pt green;
   }
 }

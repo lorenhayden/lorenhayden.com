@@ -8,11 +8,11 @@
     flex-flow: row nowrap;
     align-items: flex-end;
     justify-content: center;
+    gap: 25px;
     height: var(--app-header-height);
     width: 100dvw;
 
     .app-menu-item-#{$name} {
-      padding: 10px;
       text-decoration: none;
       text-transform: uppercase;
       border-bottom: solid 3pt transparent;

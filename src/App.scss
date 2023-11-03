@@ -31,10 +31,12 @@
       left: 0px;
       right: 0px;
       bottom: var(--app-footer-height);
+      overflow: auto;
+      overflow-x: hidden;
       display: flex;
-      flex-flow: column wrap;
+      flex-flow: column nowrap;
       align-items: center;
-      justify-content: center;
+      align-content: center;
     }
 
     .app-footer-#{$name} {

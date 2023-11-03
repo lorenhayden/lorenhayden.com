@@ -1,6 +1,7 @@
 /* imports */
 import { useEffect } from 'react';
 import { useTheme } from './components/ThemePicker';
+import SceneCanvas from './components/SceneCanvas';
 import data from "./data.json";
 
 /* sass */
@@ -44,21 +45,20 @@ const Home = () => {
     }
   }, [])
   return (
-    <section id="home" className={`home-${theme.name}`}>
-      {/* <video width="100%" height="100%" autoPlay={true}  loop={true}>
-        <source src="./src/assets/virus_001.mp4" type="video/mp4"/>
-        Your browser does not support video tag
-      </video> */}
-      <h2 id="name" className="fade-in">
-        {name}
-      </h2>
-      <h3 id="title" className="fade-in">
-        {titles[0]}
-      </h3>
-      <a id="download" className="fade-in" href="./assets/lorenhaydenresume.pdf" target="_blank">
-        Download Resume
-      </a>
-    </section >
+    <>
+      <SceneCanvas />
+      <section id="home" className={`home-${theme.name}`}>
+        <h2 className={`home-name-${theme.name}`}>
+          {name}
+        </h2>
+        <h3 className={`home-title-${theme.name}`}>
+          {titles[0]}
+        </h3>
+        <a className={`home-download-${theme.name}`} href="./assets/lorenhaydenresume.pdf" target="_blank">
+          Download Resume
+        </a>
+      </section >
+    </>
   )
 }
 
