@@ -12,38 +12,43 @@
     min-height: 100vh;
     
     .home-name-#{$name} {
-      --name-font-size: 80px;
+      --fade-in-font-size: 80px;
       --name-font-offset: 8px;
       font-family: 'Comfortaa', sans-serif;
-      font-size: var(--name-font-size);
+      font-size: var(--fade-in-font-size);
       color: map-get($theme, primary-fg);
+      text-shadow: 0 0 10px map-get($theme, primary-fg);
       transition-property: font-size;
       transition-duration: 0.5s;
       transition-timing-function: ease-in-out;
 
       @media(max-width: 1365px) {
-        font-size: calc(var(--name-font-size) - (var(--name-font-offset) * 1));
+        --fade-in-font-size: calc(80px - var(--name-font-offset) * 1);
+        font-size: var(--fade-in-font-size);
         transition-property: font-size;
         transition-duration: 0.5s;
         transition-timing-function: ease-in-out;
       }
 
       @media(max-width: 1024px){
-        font-size: calc(var(--name-font-size) - (var(--name-font-offset) * 2));
+        --fade-in-font-size: calc(80px - var(--name-font-offset) * 2);
+        font-size: var(--fade-in-font-size);
         transition-property: font-size;
         transition-duration: 0.5s;
         transition-timing-function: ease-in-out;
       }
 
       @media(max-width: 768px) {
-        font-size: calc(var(--name-font-size) - (var(--name-font-offset) * 3));
+        --fade-in-font-size: calc(80px - var(--name-font-offset) * 3);
+        font-size: var(--fade-in-font-size);
         transition-property: font-size;
         transition-duration: 0.5s;
         transition-timing-function: ease-in-out;
       }
 
       @media(max-width: 512px) {
-        font-size: calc(var(--name-font-size) - (var(--name-font-offset) * 4));
+        --fade-in-font-size: calc(80px - var(--name-font-offset) * 4);
+        font-size: var(--fade-in-font-size);
         transition-property: font-size;
         transition-duration: 0.5s;
         transition-timing-function: ease-in-out;
@@ -66,6 +71,7 @@
       text-transform: uppercase;
       font-family: 'Orbitron', sans-serif;
       letter-spacing: 10px;
+      text-shadow: 0 0 10px map-get($theme, primary-fg);
       color: map-get($theme, primary-fg);
       font-size: var(--app-font-size-lg);
 

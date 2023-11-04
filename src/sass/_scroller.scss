@@ -1,6 +1,7 @@
 @import './themes';
 
 @each $name, $theme in $themes {
+  
   ::-webkit-scrollbar {
     width: 5px;
     /* Set the width of the scrollbar */

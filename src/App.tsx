@@ -1,5 +1,5 @@
 // imports
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { faHome, faList, faChartSimple, faAddressCard } from '@fortawesome/free-solid-svg-icons';
 import { faCodepen, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
@@ -19,28 +19,34 @@ import Experience from './Experience.tsx';
 import Skills from './Skills.tsx';
 import Contact from './Contact.tsx';
 
+
+
 function App() {
   const [theme, setTheme] = useState(getTheme());
-  const [sidebarexpanded, setSidebarExpanded] = useState(false);
+  const [sidebarExpanded, setSidebarExpanded] = useState(false);
+
   const onThemeChanged = (theme: ThemeDefinition) => {
     setTheme(theme);
   }
+
   const onHamburgerChanged = (expanded: boolean) => {
     setSidebarExpanded(expanded);
   }
+
   const onSidebarItemClicked = (expanded: boolean) => {
     setSidebarExpanded(expanded);
   }
+
   return (
     <ThemePicker onThemeChanged={onThemeChanged}>
-      <Hamburger expanded={sidebarexpanded} onChanged={onHamburgerChanged} />
-      <Sidebar expanded={sidebarexpanded}>
+      <Hamburger expanded={sidebarExpanded} onChanged={onHamburgerChanged} />
+      <Sidebar expanded={sidebarExpanded}>
         <SidebarItem icon={faHome} caption="home" url="#home" onChanged={onSidebarItemClicked} />
         <SidebarItem icon={faList} caption="experience" url="#experience" onChanged={onSidebarItemClicked} />
         <SidebarItem icon={faChartSimple} caption="skills" url="#skills" onChanged={onSidebarItemClicked} />
         <SidebarItem icon={faAddressCard} caption="contact" url="#contact" onChanged={onSidebarItemClicked} />
       </Sidebar>
-      <div className={`app-${theme.name}`}>
+      <div id="app-header" className={`app-${theme.name}`}>
         <header className={`app-header-${theme.name}`}>
           <Menu>
             <MenuItem icon={faHome} caption="home" url="#home" />
@@ -49,13 +55,13 @@ function App() {
             <MenuItem icon={faAddressCard} caption="contact" url="#contact" />
           </Menu>
         </header>
-        <div className={`app-content-${theme.name}`}>
+        <div id="app-content" className={`app-content-${theme.name}`}>
           <Home />
           <Experience />
           <Skills />
           <Contact />
         </div>
-        <footer className={`app-footer-${theme.name}`}>
+        <footer id="app-footer" className={`app-footer-${theme.name}`}>
           <Toolbar>
             <ToolbarIcon icon={faLinkedin} url="https://linkedin.com/in/loren-hayden-1b0bbb52" />
             <ToolbarIcon icon={faGithub} url="https://github.com/lorenhayden" />

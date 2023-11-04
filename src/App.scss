@@ -26,6 +26,7 @@
     }
 
     .app-content-#{$name} {
+      scroll-behavior: smooth;
       position: absolute;
       top: var(--app-header-height);
       left: 0px;

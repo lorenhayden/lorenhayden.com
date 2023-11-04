@@ -9,7 +9,9 @@ import "./sass/_home.scss";
 
 /* declarations */
 const observerConfig = {
-  threshold: 0,
+  root: document.getElementById("app-content"),
+  threshold: 0.5,
+  rootMargin: "70px"
 }
 
 const Home = () => {
@@ -20,7 +22,7 @@ const Home = () => {
     const onIntersect = (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
       if (entries && observer) {
         entries.forEach(entry => {
-          if(entry.isIntersecting){
+          if (entry.isIntersecting) {
             entry.target.classList.add('fade-in')
             entry.target.classList.remove('fade-out');
           } else {
@@ -48,13 +50,13 @@ const Home = () => {
     <>
       <SceneCanvas />
       <section id="home" className={`home-${theme.name}`}>
-        <h2 className={`home-name-${theme.name}`}>
+        <h2 id="name" className={`home-name-${theme.name} fade-in`}>
           {name}
         </h2>
-        <h3 className={`home-title-${theme.name}`}>
+        <h3 id="title" className={`home-title-${theme.name} fade-in`}>
           {titles[0]}
         </h3>
-        <a className={`home-download-${theme.name}`} href="./assets/lorenhaydenresume.pdf" target="_blank">
+        <a id="download" className={`home-download-${theme.name} fade-in`} href="./assets/lorenhaydenresume.pdf" target="_blank">
           Download Resume
         </a>
       </section >
