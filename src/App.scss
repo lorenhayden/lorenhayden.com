@@ -19,6 +19,7 @@
       left: 0px;
       right: 0px;
       height: var(--app-header-height);
+      width: 100vw;
       display: flex;
       flex-flow: row wrap;
       align-items: center;
@@ -31,13 +32,34 @@
       top: var(--app-header-height);
       left: 0px;
       right: 0px;
-      bottom: var(--app-footer-height);
+      height: calc(100dvh - (var(--app-footer-height) + var(--app-header-height)));
       overflow: auto;
       overflow-x: hidden;
-      display: flex;
-      flex-flow: column nowrap;
-      align-items: center;
-      align-content: center;
+
+      section {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+        color: map-get($theme, primary-fg);
+        background-color: map-get($theme, primary-bg);
+      }
+
+      #home {
+        min-height: calc(100dvh - (var(--app-footer-height) + var(--app-header-height)));
+      }
+
+      #experience {
+        min-height: calc(100dvh - (var(--app-footer-height) + var(--app-header-height)));
+      }
+
+      #skills {
+        min-height: calc(100dvh - (var(--app-footer-height) + var(--app-header-height)));
+      }
+
+      #contact {
+        min-height: calc(100dvh - (var(--app-footer-height) + var(--app-header-height)));
+      }
     }
 
     .app-footer-#{$name} {
@@ -47,9 +69,33 @@
       bottom: 0px;
       height: var(--app-footer-height);
       display: flex;
-      flex-flow: row wrap;
+      flex-flow: column wrap;
       align-items: center;
       justify-content: center;
+      color: map-get($theme, primary-fg);
+      font-size: var(--app-font-size-lg);
+      transition: 0.5 font-size;
+
+      @media(max-width: 1365px) {
+        font-size: var(--app-font-size-med);
+        transition: 0.5 font-size;
+      }
+
+      @media(max-width: 1024px) {
+        font-size: var(--app-font-size-sm);
+        transition: 0.5 font-size;
+      }
+
+      @media(max-width: 768px) {
+        font-size: calc(var(--app-font-size-sm) - 2px);
+        transition: 0.5 font-size;
+      }
+
+      @media(max-width: 512px) {
+        font-size: calc(var(--app-font-size-sm) - 4px);
+        transition: 0.5 font-size;
+      }
+
     }
   }
 }

@@ -4,9 +4,10 @@
 
 @each $name, $theme in $themes {
   .app-menu-#{$name} {
+    font-family: 'Roboto', sans-serif;
     display: flex;
     flex-flow: row nowrap;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
     gap: 25px;
     height: var(--app-header-height);

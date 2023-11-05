@@ -8,9 +8,57 @@
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
-    width: 100dvw;
-    min-height: 100vh;
-    
+
+    .home-image-#{$name} {
+      --image-size: 350px;
+      --image-offset: 25px;
+      --image-index: 0;
+      border-radius: 50%;
+      width: calc(var(--image-size) - (var(--image-offset) * var(--image-index)));
+      height: calc(var(--image-size) - (var(--image-offset) * var(--image-index)));
+      margin: 25px;
+      box-shadow: 0px 0px 20px map-get($theme, primary-fg);
+      transition-property: width, height;
+      transition-duration: 0.5s;
+      transition-timing-function: ease-in-out;
+
+      @media(max-width: 1365px) {
+        --image-index: 1;
+        width: calc(var(--image-size) - (var(--image-offset) * var(--image-index)));
+        height: calc(var(--image-size) - (var(--image-offset) * var(--image-index)));
+        transition-property: width, height;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+      }
+
+      @media(max-width: 1024px) {
+        --image-index: 2;
+        width: calc(var(--image-size) - (var(--image-offset) * var(--image-index)));
+        height: calc(var(--image-size) - (var(--image-offset) * var(--image-index)));
+        transition-property: width, height;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+      }
+
+      @media(max-width: 768px) {
+        --image-index: 3;
+        width: calc(var(--image-size) - (var(--image-offset) * var(--image-index)));
+        height: calc(var(--image-size) - (var(--image-offset) * var(--image-index)));
+        transition-property: width, height;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+      }
+
+      @media(max-width: 512px) {
+        --image-index: 4;
+        width: calc(var(--image-size) - (var(--image-offset) * var(--image-index)));
+        height: calc(var(--image-size) - (var(--image-offset) * var(--image-index)));
+        transition-property: width, height;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+      }
+
+    }
     .home-name-#{$name} {
       --fade-in-font-size: 80px;
       --name-font-offset: 8px;
@@ -30,7 +78,7 @@
         transition-timing-function: ease-in-out;
       }
 
-      @media(max-width: 1024px){
+      @media(max-width: 1024px) {
         --fade-in-font-size: calc(80px - var(--name-font-offset) * 2);
         font-size: var(--fade-in-font-size);
         transition-property: font-size;
@@ -63,7 +111,7 @@
       }
 
     }
-    
+
     .home-title-#{$name} {
       --title-font-size: var(--app-font-size-lg);
       --title-font-offset: 2px;
@@ -83,7 +131,7 @@
         transition-timing-function: ease-in-out;
       }
 
-      @media(max-width: 1024px){
+      @media(max-width: 1024px) {
         font-size: calc(var(--title-font-size) - (var(--title-font-offset) * 2));
         letter-spacing: 6px;
         transition-property: font-size;
@@ -116,7 +164,7 @@
       }
 
     }
-    
+
     .home-download-#{$name} {
       text-decoration: none;
       margin-top: 50px;
@@ -131,21 +179,21 @@
       transition-duration: 0.5s;
       transition-timing-function: ease-in-out;
 
-      @media(max-width: 1356px){
+      @media(max-width: 1356px) {
         font-size: var(--app-font-size-med);
         transition-property: font-size;
         transition-duration: 0.5s;
         transition-timing-function: ease-in-out;
       }
 
-      @media(max-width: 1024px){
+      @media(max-width: 1024px) {
         font-size: var(--app-font-size-sm);
         transition-property: font-size;
         transition-duration: 0.5s;
         transition-timing-function: ease-in-out;
       }
 
-      @media(max-width: 1024px){
+      @media(max-width: 1024px) {
         font-size: calc(var(--app-font-size-sm) - 2px);
         transition-property: font-size;
         transition-duration: 0.5s;

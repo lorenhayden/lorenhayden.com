@@ -6,7 +6,7 @@
   .side-bar-#{$name} {
     z-index: 2;
     position: absolute;
-    top: var(--app-header-height);
+    top: 75px;
     left: -300px;
     display: flex;
     flex-flow: column nowrap;
@@ -14,7 +14,6 @@
     justify-content: flex-start;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-    box-shadow: 0 0 10px map-get($theme, secondary-fg);
     transition-property: left;
     transition-duration: 1s;
     transition-timing-function: ease-in-out;

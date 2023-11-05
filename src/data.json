@@ -14,7 +14,12 @@
       "title": "Senior Software Engineer",
       "started": "Apr 2014",
       "ended": "Sep 2023",
-      "tasks": []
+      "tasks": [
+        "Built interactive web application interfaces leveraging CSS, SASS, and Javascript, and ReactJS",
+        "Built back-end API for website using Javascript and ExpressJS, auth0 and Microsoft Reporting.",
+        "Created new and modified existing Microsoft SQL, MySQL, and PostgreSQL tables, procedures, and functions",
+        "Created and maintained Docker stacks, services, and containers for a multiple micro-services"
+      ]
     },
     {
       "company": "ESP Solutions",
@@ -22,31 +27,46 @@
       "title": "Consultant",
       "started": "Apr 2013",
       "ended": "Jun 2013",
-      "tasks": []
+      "tasks": [
+        "Assist in creating software specs from stakeholder requirements",
+        "Draft software documentation and concepts, and refine them",
+        "Implement suggestions to enhance documentation and development standards"
+      ]
     },
     {
-      "company": "Acrendo Medical Software",
+      "company": "Acrendo Medical",
       "location": "San Diego, CA",
       "title": "Software Engineer",
       "started": "Oct 2012",
       "ended": "Apr 2013",
-      "tasks": []
+      "tasks": [
+        "Provided IT support for 100+ doctors",
+        "Updated existing software using utilizing VB.NET, and C#",
+        "Create new and updated existing stored procedures in Microsoft SQL"
+      ]
     },
     {
-      "company": "Icon Group Books, International",
+      "company": "Icon Group Books, Int'l",
       "location": "San Diego, CA",
       "title": "Software Engineer",
       "started": "Dec 2010",
       "ended": "Oct 2012",
-      "tasks": []
+      "tasks": [
+        "Created teaching tools for non-native speaking English speakers utilizing VBA/VB.NET/C#",
+        "Created web-based Industry Reports, Cultural Statistics, Company Benchmarks and Gaps, Health Publications"
+      ]
     },
     {
-      "company": "Vista Biologicals Corporation",
+      "company": "Vista Biologicals",
       "location": "Carlsbad, CA",
       "title": "Dev/Ops",
       "started": "Dec 2009",
       "ended": "Oct 2010",
-      "tasks": []
+      "tasks": [
+        "Installing Software, and backup, scientific software",
+        "Routine maintenance of all computers",
+        "Created document management system utlizing C#"
+      ]
     },
     {
       "company": "Hunter Ambrose",
@@ -54,7 +74,11 @@
       "title": "Web Developer",
       "started": "Sep 2009",
       "ended": "Dec 2009",
-      "tasks": []
+      "tasks": [
+        "Imported existing legacy data into 2008 Microsoft 2008",
+        "Design and develop Microsoft SQL 2008 database for their website",
+        "Built web-based admin tools to manage location, services, medical specialties, hospital providers, and members"
+      ]
     },
     {
       "company": "Community Resource for Sciences",
@@ -62,15 +86,23 @@
       "title": "Web Developer",
       "started": "Jan 2007",
       "ended": "Jul 2009",
-      "tasks": []
+      "tasks": [
+        "Migrated a Microsoft Access form application to a web-based interface",
+        "Created additional reports showing statistical data about keywords being requested by members",
+        "Designed and developed a volunteer management system"
+      ]
     },
     {
-      "company": "Vista Biological Corporation",
+      "company": "Vista Biological",
       "location": "San Diego, CA",
       "title":"Dev/Ops",
       "started": "Jan 2007",
       "ended": "Nov 2008",
-      "tasks": []
+      "tasks": [
+        "Setup their Active Directory network, and created users with passwords to secure network",
+        "Setup and maintained incrememtal backsups",
+        "Upgraded access application to Windows C# form application utilizing C# that tracked companies, vendors, and employees"
+      ]
     },
     {
       "company": "Bikebandit",
@@ -78,7 +110,10 @@
       "title": "Software Engineer",
       "started": "Mar 2007",
       "ended": "Nov 2007",
-      "tasks": []
+      "tasks": [
+        "Primary responsibility was to maintain, and enhance Fulfillment and Operations applications using C# and Microsoft SQL",
+        "Developed Ad Words Manager which allowed the company to extended features to maintain keywords used via the Google Ad Words web services"
+      ]
     },
     {
       "company": "EDmin",
@@ -86,7 +121,10 @@
       "title": "Software Engineer",
       "started": "Jan 2007",
       "ended": "Mar 2007",
-      "tasks": []
+      "tasks": [
+        "Enhancing performance by adding asynchronous transmission of data to the web service",
+        "Responsible for transforming data to Scantron Achievement web service that track student assessment data for Schools all over the United States"
+      ]
     },
     {
       "company": "End2End, Tech",
@@ -94,7 +132,11 @@
       "title": "Consultant",
       "started": "Jan 2006",
       "ended": "Jan 2007",
-      "tasks": []
+      "tasks": [
+        "Updated and fixed bugs in Microsoft SQL Procedures",
+        "Created new Forms and updated existing user interfaces to enhance the over-all user experience",
+        "Updated back-end VBA scripts for Access Application."
+      ]
     },
     {
       "company": "Innova Systems, Inc.",
@@ -102,7 +144,12 @@
       "title": "Web Developer",
       "started": "Mar 2005",
       "ended": "Sep 2006",
-      "tasks": []
+      "tasks": [
+        "Developed training software in C#, VB.Net, ASP.Net for the United States Navy, and Marine Corps",
+        "Created and updated procedures in Microsoft SQL database",
+        "Responsible for writing cross tab query library that was written in C++, as an extension in Microsoft SQL",
+        "Helped upgrade website to 1.1 to 2.0 ASP.NET"
+      ]
     },
     {
       "company": "Capital One Auto Finance",
@@ -110,7 +157,11 @@
       "title": "Software Developer",
       "started": "Sep 2004",
       "ended": "Mar 2005",
-      "tasks": []
+      "tasks": [
+        "Software Development to upgrade an existing legacy MFC application to process loan applications",
+        "Created code C++ code to transport SOAP messages to in-house developed web-service",
+        "Developed new features in existing Windows NT Service that allows the transporting of loan applications to a third party provider"
+      ]
     },
     {
       "company": "Advanced Network, Inc.",
@@ -118,7 +169,11 @@
       "title":"Dev/Ops",
       "started": "May 2000",
       "ended": "Sep 2004",
-      "tasks": []
+      "tasks": [
+        "Full development and management of all in-house software using VB6, VB .Net C#, C++, Microsoft Access, SQL Server 2000",
+        "Developed client and server software that interfaced with ATM network encryption hardware, that allowed dispatch to use one-time keys to access ATM's increasing the security, and decreasing the cost",
+        "Replaced and maintained legacy hardware, with new firmware updates"
+      ]
     },
     {
       "company": "EDPMI",
@@ -126,7 +181,10 @@
       "title": "Software Developer",
       "started": "Jan 1997",
       "ended": "May 2000",
-      "tasks": []
+      "tasks": [
+        "Helped facilitate the upgrade of an existing Access Application to a VB.Net desktop application, which became our companies Enterprise Business Software",
+        ""
+      ]
     },
     {
       "company": "Computer Research Group",
@@ -134,23 +192,33 @@
       "title": "Junior Software Developer",
       "started": "Dec 1997",
       "ended": "Jan 1996",
-      "tasks": []
+      "tasks": [
+        "Helped develop and maintain the of Enterprise Business Software utilizing VB.NET",
+        "Created and updated data access alyer utilizing ADO.NET"
+      ]
     },
     {
-      "company": "North Country Municipal Court",
+      "company": "North Country Municipal Courts",
       "location": "San Diego, CA",
       "title": "Computer Support",
       "started": "Dec 1997",
       "ended": "Sep 1996",
-      "tasks": []
+      "tasks": [
+       "Responsible for the management of all computer hardware and Novell Network in three sites",
+       "Assisted in training of all new software. Taught advanced classes in Excel, Access, Word, Power Point"
+      ]
     },
     {
       "company": "United States Navy",
       "location": "Okinawa, Japan",
-      "title": "ISC",
+      "title": "Information Systems Coordinator",
       "started": "Mar 1991",
       "ended": "Feb 1995",
-      "tasks": []
+      "tasks": [
+       "Fix and maintain existing hardware",
+       "Management of administrative applications and reports in hospital clinics",
+       "Setup and managed over 100+ users on a Banyan Vines network nodes"
+      ]
     }
   ],
   "skills": {

@@ -1,16 +1,18 @@
 @keyframes fade-in {
   0% {
     opacity: 0;
+    transform: rotateX(45deg);
   }
 
   100% {
     opacity: 1;
+    transform: rotateX(0deg);
   }
 }
 
 .fade-in {
   animation-name: fade-in;
-  animation-duration: 1s;
+  animation-duration: 2s;
   animation-delay: var(--fade-in-animation-delay);
   animation-timing-function: ease-in-out;
   animation-iteration-count: 1;
@@ -21,16 +23,18 @@
 @keyframes fade-out {
   0% {
     opacity: 1;
+    transform: rotateX(0deg);
   }
 
   100% {
     opacity: 0;
+    transform: rotateX(45deg);
   }
 }
 
 .fade-out {
   animation-name: fade-out;
-  animation-duration: 1s;
+  animation-duration: 2s;
   animation-delay: var(--fade-in-animation-delay);
   animation-timing-function: ease-in-out;
   animation-iteration-count: 1;

@@ -6,10 +6,12 @@
   .skills-#{$name} {
     display: flex;
     flex-flow: column nowrap;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     min-height: 100vh;
-    width: 100vw;
-    border: dashed 2pt purple;
+    background-color: white;
+    margin: 25px;
+    padding: 25px;
+    box-shadow: 0 0 10px map-get($theme, secondary-fg);
  }
 }

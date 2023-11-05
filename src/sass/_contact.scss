@@ -5,11 +5,56 @@
 @each $name, $theme in $themes {
   .contact-#{$name} {
     display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: center;
-    width: 100dvw;
-    min-height: 100dvh;
-    border: dashed 2pt pink;
- }
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .25), 0 3px 10px 0 rgba(0, 0, 0, .2);
+    background-color: map-get($theme, secondary-bg);
+
+    .contact-header-#{$name} {
+      text-transform: uppercase;
+      font-family: 'Roboto', sans-serif;
+      font-size: calc(var(--app-font-size-lg) + 4px);
+    }
+
+    .contact-content-#{$name} {
+      .contact-item-#{$name} {
+        display: flex;
+        flex-flow: row nowrap;
+        list-style: none;
+        color: map-get($theme, secondary-fg);
+
+        &:hover {
+          cursor: pointer;
+          .contact-link-#{$name} {
+            text-shadow: 0 0 10px map-get($theme, primary-link-hover);
+          }
+          .contact-tooltip-#{$name} {
+            opacity: 1;
+            transition: 1s opacity;
+          }
+        }
+        .contact-icon-#{$name} {
+          font-size: var(--app-font-size-lg);
+        }
+        .contact-link-#{$name} {
+          text-decoration: none;
+          color: map-get($theme, primary-fg);
+        }
+        .contact-tooltip-#{$name} {
+          border-radius: 5px;
+          color: map-get($theme, tooltip-fg);
+          background-color: map-get($theme, tooltip-bg);
+          box-shadow: 0 0 10px map-get($theme, primary-fg);
+          opacity: 0;
+          transition: 1s opacity;
+        }
+      }
+    }
+
+    .contact-map-#{$name} {
+      border: solid 2pt map-get($theme, secondary-fg);
+      iframe {
+        border: none;
+      }
+    }
+
+  }
 }
