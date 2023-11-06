@@ -1,5 +1,5 @@
 /* imports */
-import { ReactNode, FC, useState } from 'react'
+import { ReactNode, FC } from 'react'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useTheme } from './ThemePicker'

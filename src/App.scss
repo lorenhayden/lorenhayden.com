@@ -10,8 +10,6 @@
     left: 0px;
     right: 0px;
     bottom: 0px;
-    background-color: map-get($theme, primary-bg);
-    transition: 0.5s background-color;
 
     .app-header-#{$name} {
       position: fixed;
@@ -24,6 +22,7 @@
       flex-flow: row wrap;
       align-items: center;
       justify-content: center;
+      background-color: map-get($theme, primary-bg);
     }
 
     .app-content-#{$name} {
@@ -40,7 +39,7 @@
         display: flex;
         flex-flow: column nowrap;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         color: map-get($theme, primary-fg);
         background-color: map-get($theme, primary-bg);
       }
@@ -75,6 +74,7 @@
       color: map-get($theme, primary-fg);
       font-size: var(--app-font-size-lg);
       transition: 0.5 font-size;
+      background-color: map-get($theme, primary-bg);
 
       @media(max-width: 1365px) {
         font-size: var(--app-font-size-med);

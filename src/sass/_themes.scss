@@ -160,26 +160,56 @@
 }
 
 $themes: (
-  light: (primary-fg: #111111,
+  /* light theme */
+  light: (
+    /* cursor config */
     cursor-color: #00aeff,
+
+    /* primary config */
+    primary-fg: #111111,
     primary-bg: #f1f1f1,
     primary-button-fg: white,
     primary-link-hover: #00aeff,
     primary-button-bg: linear-gradient(#00aeff, #005f8b),
+
+    /* secondary config */
     secondary-fg: #333333,
     secondary-bg: #e1e1e1,
     secondary-tile-fg: #00aeff,
+
+    /* tile config */
+    title-fg: #333333,
+    tile-bg: white,
+    tile-marker-color: #00aeff,
+    tile-border-color: #949191f3,
+    
+    /* tooltip config */
     tooltip-bg: black,
     tooltip-fg: white),
-  dark: (primary-fg: white,
-  cursor-color: #00aeff,
+
+  /* dark theme */
+  dark: (
+    /* cursor config */
+    cursor-color: #00aeff,
+
+    /* primary config */
+    primary-fg: white,
     primary-bg: #111111,
     primary-button-fg: white,
     primary-link-hover: #00aeff,
     primary-button-bg: linear-gradient(#00aeff, #005f8b),
+
+    /* secondary config */
     secondary-fg: #f1f1f1,
     secondary-bg: #333333,
-    secondary-tile-fg: #00aeff,
+
+    /* tile config */
+    title-fg: white,
+    tile-bg: #222222,
+    tile-marker-color: #00aeff,
+    tile-border-color: #cccccc,
+
+    /* tooltip config */
     tooltip-bg: white,
     tooltip-fg: black)
 );
@@ -213,7 +243,7 @@ $themes: (
       color: map-get($theme, secondary-fg);
       transition-property: color;
       transition-duration: 0.5s;
-  }
+    }
   }
 
 }

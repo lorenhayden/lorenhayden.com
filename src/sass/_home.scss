@@ -10,7 +10,7 @@
     justify-content: center;
 
     .home-image-#{$name} {
-      --image-size: 350px;
+      --image-size: 200px;
       --image-offset: 25px;
       --image-index: 0;
       border-radius: 50%;
@@ -59,8 +59,9 @@
       }
 
     }
+    
     .home-name-#{$name} {
-      --fade-in-font-size: 80px;
+      --fade-in-font-size: 60px;
       --name-font-offset: 8px;
       font-family: 'Comfortaa', sans-serif;
       font-size: var(--fade-in-font-size);

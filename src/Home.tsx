@@ -6,7 +6,7 @@ import data from "./data.json";
 /* sass */
 import "./sass/_home.scss";
 
-/* declarations */
+/* intersect observer config */
 const observerConfig = {
   root: document.getElementById("app-content"),
   threshold: 0.5,
@@ -32,6 +32,10 @@ const Home = () => {
       }
     }
     const observer = new IntersectionObserver(onObserve, observerConfig);
+    const canvasElement = document.getElementById("home-canvas");
+    if (canvasElement) {
+      observer.observe(canvasElement)
+    }
     const imageElement = document.getElementById("image");
     if (imageElement) {
       observer.observe(imageElement)
