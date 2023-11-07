@@ -57,12 +57,12 @@ const Home = () => {
   return (
     <section className={`home-${theme.name}`}>
       <img id="image" className={`home-image-${theme.name} fade-in`} src="me.png" alt="Face picture of Loren Hayden" />
-      <h2 id="name" className={`home-name-${theme.name} fade-in`}>
+      <div  id="name" className={`home-name-${theme.name} fade-in`}>
         {name}
-      </h2>
-      <h3 id="title" className={`home-title-${theme.name} fade-in`}>
+      </div >
+      <div id="title" className={`home-title-${theme.name} fade-in`}>
         <AutoScoller titles={titles} />
-      </h3>
+      </div>
       <a id="download" className={`home-download-${theme.name} fade-in`} href="./assets/lorenhaydenresume.pdf" target="_blank">
         Download Resume
       </a>
