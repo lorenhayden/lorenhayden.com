@@ -17,6 +17,7 @@
     }
 
     .progress-bar-#{$name} {
+      z-index: -1;
       position: relative;
       display: flex;
       flex-flow: column nowrap;
@@ -27,16 +28,17 @@
       background-color: map-get($theme, percent-bg);
       
       .progress-bar-percent-#{$name} {
-        z-index: -1;
+        z-index: 0;
         position: absolute;
         top: 0px;
         left: 0px;
-        width: 0%;
+        width: 20%;
         height: $progress-bar-height;
         background-color: map-get($theme, percent-fill);
       }
 
       .progress-bar-title-#{$name} {
+        z-index: 1;
         font-family: 'Orbitron', sans-serif;
         text-transform: uppercase;
         font-size: calc(var(--app-font-size-sm) - 4px);
