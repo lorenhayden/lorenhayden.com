@@ -175,7 +175,6 @@ $themes: (
     /* secondary config */
     secondary-fg: #333333,
     secondary-bg: #e1e1e1,
-    secondary-tile-fg: #00aeff,
 
     /* tile config */
     title-fg: #333333,
@@ -183,6 +182,12 @@ $themes: (
     tile-marker-color: #00aeff,
     tile-border-color: #949191f3,
     
+    /* percent bar */
+    percent-border: #e0dede,
+    percent-bg: #f1f1f1,
+    percent-fg: #777777,
+    percent-fill: #00aeff,
+
     /* tooltip config */
     tooltip-bg: black,
     tooltip-fg: white),
@@ -208,6 +213,12 @@ $themes: (
     tile-bg: #222222,
     tile-marker-color: #00aeff,
     tile-border-color: #cccccc,
+
+    /* percent bar */
+    percent-border: #949191f3,
+    percent-bg: #555555,
+    percent-fg: white,
+    percent-fill: #00aeff,
 
     /* tooltip config */
     tooltip-bg: white,

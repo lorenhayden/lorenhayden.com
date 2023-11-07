@@ -1,7 +1,7 @@
 /* imports */
 import { FC, useEffect } from 'react';
 import { useTheme } from './components/ThemePicker';
-import data from "./data.json";
+import experiences from "./data/experiences.json";
 
 /* sass */
 import "./sass/_experience.scss";
@@ -64,17 +64,18 @@ export const ExperienceTile: FC<TileProps> = ({ title, company, location, starte
 /* main component declaration */
 const Experience = () => {
   const theme = useTheme();
-  const history = data['experience'];
   const onObserve = (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.remove('fade-out');
-        entry.target.classList.add('fade-in');
-      } else {
-        entry.target.classList.remove('fade-in');
-        entry.target.classList.add('fade-out');
-      }
-    })
+    if( entries && observer ) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove('fade-out');
+          entry.target.classList.add('fade-in');
+        } else {
+          entry.target.classList.remove('fade-in');
+          entry.target.classList.add('fade-out');
+        }
+      })
+    }
   }
   useEffect(() => {
     const observer = new IntersectionObserver(onObserve, observerConfig);
@@ -97,7 +98,7 @@ const Experience = () => {
         Work Experience
       </h1>
       <div className={`experience-content-${theme.name}`}>
-        {history.map((item, index) => {
+        {experiences.map((item: TileProps, index: number) => {
           const itemKey = `experience-item-${index}`;
           return (
             <ExperienceTile

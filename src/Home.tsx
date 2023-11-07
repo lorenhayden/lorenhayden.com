@@ -1,7 +1,7 @@
 /* imports */
 import { useEffect } from 'react';
 import { useTheme } from './components/ThemePicker';
-import data from "./data.json";
+import home from "./data/home.json";
 
 /* sass */
 import "./sass/_home.scss";
@@ -15,8 +15,8 @@ const observerConfig = {
 
 const Home = () => {
   const theme = useTheme();
-  const name = data["name"]
-  const titles = data["titles"]
+  const name = home["name"]
+  const titles = home["titles"]
   useEffect(() => {
     const onObserve = (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
       if (entries && observer) {

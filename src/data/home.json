@@ -95,7 +95,7 @@
     {
       "company": "Vista Biological",
       "location": "San Diego, CA",
-      "title":"Dev/Ops",
+      "title": "Dev/Ops",
       "started": "Jan 2007",
       "ended": "Nov 2008",
       "tasks": [
@@ -166,7 +166,7 @@
     {
       "company": "Advanced Network, Inc.",
       "location": "San Diego, CA",
-      "title":"Dev/Ops",
+      "title": "Dev/Ops",
       "started": "May 2000",
       "ended": "Sep 2004",
       "tasks": [
@@ -204,8 +204,8 @@
       "started": "Dec 1997",
       "ended": "Sep 1996",
       "tasks": [
-       "Responsible for the management of all computer hardware and Novell Network in three sites",
-       "Assisted in training of all new software. Taught advanced classes in Excel, Access, Word, Power Point"
+        "Responsible for the management of all computer hardware and Novell Network in three sites",
+        "Assisted in training of all new software. Taught advanced classes in Excel, Access, Word, Power Point"
       ]
     },
     {
@@ -215,24 +215,10 @@
       "started": "Mar 1991",
       "ended": "Feb 1995",
       "tasks": [
-       "Fix and maintain existing hardware",
-       "Management of administrative applications and reports in hospital clinics",
-       "Setup and managed over 100+ users on a Banyan Vines network nodes"
+        "Fix and maintain existing hardware",
+        "Management of administrative applications and reports in hospital clinics",
+        "Setup and managed over 100+ users on a Banyan Vines network nodes"
       ]
     }
-  ],
-  "skills": {
-    "categories": [
-      "Languages",
-      "Operating Systems",
-      "Database Platforms",
-      "Software Applications",
-      "Cloud Services"
-    ],
-    "Languages": ["Javascript", "Python", "C#", "VB.NET", "VBA", "Lua", "C/C++"],
-    "Operating Systems": ["Windows", "Debian/Ubuntu"],
-    "Database Platforms": ["Microsoft SQL", "MySQL", "Postgres SQL"],
-    "Software Applications": ["Github", "Jira", "Confluence", "Bitbucket", "Docker", "Kubernetes", "Jenkins", "Chef"],
-    "Cloud Services": ["Google", "AWS", "Wasabi"]
-  }
+  ]
 }
