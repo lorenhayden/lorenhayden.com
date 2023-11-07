@@ -5,6 +5,7 @@ import home from "./data/home.json";
 
 /* sass */
 import "./sass/_home.scss";
+import AutoScoller from './components/AutoScroller';
 
 /* intersect observer config */
 const observerConfig = {
@@ -60,7 +61,7 @@ const Home = () => {
         {name}
       </h2>
       <h3 id="title" className={`home-title-${theme.name} fade-in`}>
-        {titles[0]}
+        <AutoScoller titles={titles} />
       </h3>
       <a id="download" className={`home-download-${theme.name} fade-in`} href="./assets/lorenhaydenresume.pdf" target="_blank">
         Download Resume
