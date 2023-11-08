@@ -8,7 +8,6 @@ import { Mesh, DirectionalLight } from 'three';
 
 /* components */
 import ThemePicker, { ThemeDefinition, getTheme, useTheme } from './components/ThemePicker';
-// import AnimatedCursor from './components/Cursor.tsx';
 import Menu, { MenuItem } from './components/Menu.tsx';
 import Hamburger from './components/Hamburger.tsx';
 import Sidebar, { SidebarItem } from './components/Sidebar.tsx';
@@ -29,18 +28,18 @@ const Lights = () => {
   const lightRef2 = useRef<DirectionalLight>(null);
   useFrame(() => {
     if (lightRef.current) {
-      lightRef.current.intensity = theme.name === 'light' ? 5 : 1
+      lightRef.current.intensity = theme.name === 'light' ? 10 : 2
       lightRef.current.position.x = -5;
       lightRef.current.position.y = 20;
       lightRef.current.position.z = -10;
-      lightRef.current.color.set("white");
+      lightRef.current.color.set("#00aeff");
     }
     if (lightRef2.current) {
-      lightRef2.current.intensity = theme.name === 'light' ? 5 : 1;
+      lightRef2.current.intensity = theme.name === 'light' ? 10 : 2;
       lightRef2.current.position.x = 5;
       lightRef2.current.position.y = 20;
       lightRef2.current.position.z = 10;
-      lightRef2.current.color.set("white");
+      lightRef2.current.color.set("#00aeff");
     }
   })
   return (
@@ -52,17 +51,12 @@ const Lights = () => {
 }
 
 const Scene = () => {
-  const theme = useTheme();
-  //const { scene } = useGLTF('./assets/website.glb');
-  const object = useGLTF('./src/assets/website.glb');
+  const object = useGLTF('./assets/website.glb');
   const meshRef = useRef<Mesh>(null);
   useEffect(() => {
     if (meshRef.current) {
       meshRef.current.rotation.set(0, -Math.PI / 2, 0);
       meshRef.current.scale.set(5, 5, 5);
-      meshRef.current.children.forEach((child) => {
-        child.material.wireframe = false;
-      })
     }
   }, [])
 
@@ -73,11 +67,6 @@ const Scene = () => {
         movez = 1.0;
       }
       meshRef.current.position.set(0, -5, movez);
-      meshRef.current.children.forEach((child) => {
-        child.material.color.set("#049ef4")
-        child.material.metalness = 1.0;
-        child.material.roughness = 0.5;
-      })
     }
   })
   return (

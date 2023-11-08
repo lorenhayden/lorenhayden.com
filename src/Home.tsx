@@ -37,9 +37,17 @@ const Home = () => {
     if (canvasElement) {
       observer.observe(canvasElement)
     }
+    const aboutElement = document.getElementById("about");
+    if (aboutElement) {
+      observer.observe(aboutElement)
+    }
     const nameElement = document.getElementById("name");
     if (nameElement) {
       observer.observe(nameElement)
+    }
+    const introElement = document.getElementById("intro");
+    if (introElement) {
+      observer.observe(introElement)
     }
     const titleElement = document.getElementById("title");
     if (titleElement) {
@@ -52,9 +60,15 @@ const Home = () => {
   }, [])
   return (
     <section className={`home-${theme.name}`}>
+      <div id="about" className={`home-about-${theme.name} fade-in`}>
+        Hi, my name is,
+      </div>
       <div  id="name" className={`home-name-${theme.name} fade-in`}>
         {name}
       </div >
+      <div id="intro" className={`home-intro-${theme.name}`}>
+        I am a,
+      </div>
       <div id="title" className={`home-title-${theme.name} fade-in`}>
         <AutoScoller titles={titles} />
       </div>

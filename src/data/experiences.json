@@ -6,8 +6,8 @@
       "started": "Apr 2014",
       "ended": "Sep 2023",
       "tasks": [
-        "Built interactive web application interfaces leveraging CSS, SASS, and Javascript, and ReactJS",
-        "Built back-end API for website using Javascript and ExpressJS, auth0 and Microsoft Reporting.",
+        "Built interactive web application interfaces leveraging CSS, SASS, and Javascript, and ReactJS framework",
+        "Built back-end API for website leveraging ExpressJS framework, auth0 and Microsoft Reporting.",
         "Created new and modified existing Microsoft SQL, MySQL, and PostgreSQL tables, procedures, and functions",
         "Created and maintained Docker stacks, services, and containers for a multiple micro-services"
       ]
@@ -161,9 +161,7 @@
       "started": "May 2000",
       "ended": "Sep 2004",
       "tasks": [
-        "Full development and management of all in-house software using VB6, VB .Net C#, C++, Microsoft Access, SQL Server 2000",
-        "Developed client and server software that interfaced with ATM network encryption hardware, that allowed dispatch to use one-time keys to access ATM's increasing the security, and decreasing the cost",
-        "Replaced and maintained legacy hardware, with new firmware updates"
+        "Software development and management of all in-house software using VB6, VB .Net C#, C++, Microsoft Access, SQL Server 2000"
       ]
     },
     {
@@ -173,19 +171,7 @@
       "started": "Jan 1997",
       "ended": "May 2000",
       "tasks": [
-        "Helped facilitate the upgrade of an existing Access Application to a VB.Net desktop application, which became our companies Enterprise Business Software",
-        ""
-      ]
-    },
-    {
-      "company": "Computer Research Group",
-      "location": "San Diego, CA",
-      "title": "Junior Software Developer",
-      "started": "Dec 1997",
-      "ended": "Jan 1996",
-      "tasks": [
-        "Helped develop and maintain the of Enterprise Business Software utilizing VB.NET",
-        "Created and updated data access alyer utilizing ADO.NET"
+        "Helped facilitate the upgrade of an existing Access Application to a VB.Net desktop application, which became our companies Enterprise Business Software"
       ]
     },
     {
@@ -206,9 +192,7 @@
       "started": "Mar 1991",
       "ended": "Feb 1995",
       "tasks": [
-        "Fix and maintain existing hardware",
-        "Management of administrative applications and reports in hospital clinics",
-        "Setup and managed over 100+ users on a Banyan Vines network nodes"
+        "Setup and managed over 100+ users on a Banyan Vines network nodes in Naval Medical Clinic"
       ]
     }
   ]
