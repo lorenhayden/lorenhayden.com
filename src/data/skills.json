@@ -1,0 +1,45 @@
+[
+  {
+    "name": "Programming Languages",
+    "items": [
+      { "name": "Javascript", "percent": 85, "level": "expert" },
+      { "name": "CSS", "percent": 85, "level": "expert" },
+      { "name": "SASS", "percent": 85, "level": "expert" },
+      { "name": "C#", "percent": 85, "level": "expert" },
+      { "name": "VB", "percent": 85, "level": "expert" },
+      { "name": "Python", "percent": 80, "level": "advanced" },
+      { "name": "C/C++", "percent": 65, "level": "intermediate" },
+      { "name": "Lua", "percent": 65, "level": "intermediate" }
+    ]
+  },
+  {
+    "name": "Software Applications",
+    "items": [
+      { "name": "Jira", "percent": 90, "level": "expert" },
+      { "name": "Confluence", "percent": 90, "level": "expert" },
+      { "name": "Lucid Charts", "percent": 90, "level": "expert" },
+      { "name": "Bitbucket", "percent": 90, "level": "expert" },
+      { "name": "Github", "percent": 85, "level": "advanced" },
+      { "name": "Docker", "percent": 85, "level": "advanced" },
+      { "name": "Kubernetes", "percent": 65, "level": "intermediate" },
+      { "name": "Jenkins", "percent": 65, "level": "intermediate" },
+      { "name": "Chef", "percent": 65, "level": "intermediate" }
+    ]
+  },
+  {
+    "name": "Operating Systems",
+    "items": [
+      { "name": "Windows", "percent": 90, "level": "expert" },
+      { "name": "Debian/Ubuntu", "percent": 85, "level": "advanced" }
+    ]
+  },
+  {
+    "name": "Database Platforms",
+    "items": [
+      { "name": "Microsoft SQL", "percent": 85, "level": "advanced" },
+      { "name": "Microsoft Access", "percent": 85, "level": "advanced" },
+      { "name": "MySQL", "percent": 75, "level": "intermediate" },
+      { "name": "Postgres SQL", "percent": 70, "level": "intermediate" }
+    ]
+  }
+]

@@ -1,51 +1,43 @@
 /* imports */
-import { FC, ReactNode } from 'react'
-import { useNavigate } from 'react-router-dom';
-import { useTheme, useThemeColors } from '../components/ThemeProvider';
+import { ReactNode, FC } from 'react';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useTheme } from './ThemePicker';
 
 /* sass */
-import '../sass/_components.scss'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import "../sass/_menu.scss";
 
-
-/* exports */
-export interface MenuProps {
-  children: ReactNode | ReactNode[]
-};
-
-export interface MenuItemProps {
+export type MenuItemProps = {
+  icon: IconProp,
   caption: string,
   url: string,
-  icon: IconProp
+}
+
+export type MenuProps = {
+  children?: ReactNode | ReactNode[]
 }
 
 const Menu: FC<MenuProps> = ({ children }) => {
   const theme = useTheme()
   return (
-    <ul className={`menu-${theme}`}>
+    <nav id="menu" className={`app-menu-${theme.name}`}>
       {children}
-    </ul>
+    </nav>
   )
 }
 
-export const MenuItem: FC<MenuItemProps> = (props) => {
-  const navigate = useNavigate()
+export const MenuItem: FC<MenuItemProps> = ({ icon, caption, url }) => {
   const theme = useTheme()
-  const colors = useThemeColors(theme);
-  const activate = (props.url === window.location.pathname)
-  let activeControl = undefined;
-  if (activate) {
-    activeControl = (<span>&nbsp;</span>)
-  }
   return (
-    <li className={`menu-item-${theme}`} onClick={() => navigate(props.url)}>
-      <FontAwesomeIcon icon={props.icon} onClick={() => navigate(props.url)} style={{color: activate === true ? colors.secondaryForeColor : colors.primaryForeColor}} />
-      <a href={props.url} style={{color: activate === true ? colors.secondaryForeColor : colors.primaryForeColor}}>{props.caption}</a>
-      <i />
-      {activeControl}
-    </li>
+    <a className={`app-menu-item-${theme.name}`} href={url}>
+      <FontAwesomeIcon className={`app-menu-item-icon-${theme.name}`} icon={icon} />
+      <span className={`app-menu-item-caption-${theme.name}`}>
+        {caption}
+      </span>
+    </a>
   )
 }
 
-export default Menu
+
+
+export default Menu;

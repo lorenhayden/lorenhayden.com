@@ -1,0 +1,39 @@
+@import "./animations";
+@import "./scroller";
+@import "./themes";
+
+
+@each $name, $theme in $themes {
+  .toolbar-#{$name} {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    .toolbar-button-#{$name} {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: center;
+      border-radius: 5px;
+
+      &:hover {
+        .toolbar-button-icon-#{$name}{
+          color: map-get($theme, primary-link-hover);
+          transition-property: color;
+          transition-duration: 0.5s;
+          transition-timing-function: ease-in-out;
+        }
+      }
+      .toolbar-button-icon-#{$name} {
+        margin:5px;
+        font-size: 25px;
+        pointer-events: none;
+        color: map-get($theme, secondary-fg);
+        transition-property: color;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+    }
+    }
+  }
+}

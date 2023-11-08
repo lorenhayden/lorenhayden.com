@@ -1,66 +1,51 @@
 /* imports */
-import { FC, ReactNode, useState, useEffect } from 'react';
-import { useTheme } from './ThemeProvider';
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { ReactNode, FC } from 'react'
+import { IconProp } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useTheme } from './ThemePicker'
+
 
 /* sass */
-import '../sass/_components.scss';
+import "../sass/_sidebar.scss"
 
-/* interfaces */
-interface SidebarButtonProps {
+
+/* types */
+type SidebarProps = {
+  expanded: boolean,
+  children?: ReactNode | ReactNode[]
+}
+
+type SidebarItemProps = {
   icon: IconProp,
+  caption: string,
   url?: string,
-  tooltip?: string
+  onChanged?: (expanded: boolean) => void;
 }
-
-interface SidebarProps {
-  children: ReactNode | ReactNode[] | undefined;
-}
-
-/* components */
-const Sidebar: FC<SidebarProps> = ({ children }) => {
-  const [expanded, setMenuState] = useState(false);
+const Sidebar: FC<SidebarProps> = ({ children, expanded}) => {
   const theme = useTheme();
-
-  const onBrowserResize = ( ) => {
-    setMenuState(false);
-  }
-
-  useEffect(() => {
-    window.addEventListener('resize', onBrowserResize);
-    return () => {
-      window.removeEventListener('resize', onBrowserResize);
-    }
-  })
+  const sideBarClassName = (expanded === true) ? `side-bar-${theme.name} side-bar-expanded-${theme.name}` : `side-bar-${theme.name}`;
   return (
-    <>
-      <div className={`side-bar-${theme}`}>
-        <div className={`side-bar-menu-${theme}`} onClick={() => setMenuState(!expanded)} >
-          <FontAwesomeIcon icon={expanded === true ? faTimes : faBars} />
-        </div>
-      </div>
-      <div className={`side-bar-buttons${expanded === true ? '-expanded-' : '-'}${theme}`}>
-        {children}
-      </div>
-    </>    
-  )
-}
-
-export const SidebarButton: FC<SidebarButtonProps> = (props) => {
-  const theme = useTheme();
-  return (
-    <div className={`side-bar-button-${theme}`}>
-      <a className={`side-bar-button-icon-${theme}`} href={props.url}>
-        <FontAwesomeIcon icon={props.icon} />
-      </a>
-      <span className={`side-bar-button-tooltip-${theme}`}>
-        {props.tooltip}
-      </span>
+    <div className={sideBarClassName}>
+      {children}
     </div>
   )
 }
 
-/* default export */
+export const SidebarItem: FC<SidebarItemProps> = ({ icon, caption, url, onChanged }) => {
+  const theme = useTheme();
+  const onHandleClick = () => {
+    if( onChanged ) {
+      onChanged(false);
+    }
+  }
+  return (
+    <a className={`side-bar-item-${theme.name}`} href={url} onClick={onHandleClick}>
+      <FontAwesomeIcon className={`side-bar-item-icon-${theme.name}`} icon={icon} />
+      <span className={`side-bar-item-caption-${theme.name}`}>
+        {caption}
+      </span>
+    </a>
+  )
+}
+
 export default Sidebar;

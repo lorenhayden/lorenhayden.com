@@ -1,17 +1,43 @@
-@keyframes hud-slide-open {
+@keyframes fade-in {
   0% {
     opacity: 0;
+    transform: rotateX(45deg);
   }
+
   100% {
-    opacity: var(--hud-slide-open-opacity);
+    opacity: 1;
+    transform: rotateX(0deg);
   }
 }
 
-.hud-slide-open {
-  animation-name: hud-slide-open;
-  animation-duration: var(--hud-slide-open-duration);
-  animation-delay: var(--hud-slide-open-delay);
+.fade-in {
+  animation-name: fade-in;
+  animation-duration: 1s;
+  animation-delay: var(--fade-in-animation-delay);
   animation-timing-function: ease-in-out;
-  animation-iteration-count: var(--hude-slide-open-count);
+  animation-iteration-count: 1;
+  animation-direction: forwards;
+  animation-fill-mode: both;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotateX(45deg);
+  }
+}
+
+.fade-out {
+  animation-name: fade-out;
+  animation-duration: 1s;
+  animation-delay: var(--fade-in-animation-delay);
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-direction: forwards;
   animation-fill-mode: both;
 }

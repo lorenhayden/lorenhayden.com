@@ -1,0 +1,101 @@
+@import "../src/sass/animations";
+@import "../src/sass/scroller";
+@import "../src/sass/themes";
+
+
+@each $name, $theme in $themes {
+  .app-#{$name} {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: map-get($theme, primary-bg);
+    opacity: .85;
+    transition: 1s background-color;
+
+    .app-header-#{$name} {
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      height: var(--app-header-height);
+      width: 100vw;
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .app-content-#{$name} {
+      scroll-behavior: smooth;
+      position: absolute;
+      top: var(--app-header-height);
+      left: 0px;
+      right: 0px;
+      height: calc(100dvh - (var(--app-footer-height) + var(--app-header-height)));
+      overflow: auto;
+      overflow-x: hidden;
+
+      section {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+        color: map-get($theme, primary-fg);
+      }
+
+      #home {
+        min-height: calc(100dvh - (var(--app-footer-height) + var(--app-header-height)));
+      }
+
+      #experience {
+        min-height: calc(100dvh - (var(--app-footer-height) + var(--app-header-height)));
+      }
+
+      #skills {
+        min-height: calc(100dvh - (var(--app-footer-height) + var(--app-header-height)));
+      }
+
+      #contact {
+        min-height: calc(100dvh - (var(--app-footer-height) + var(--app-header-height)));
+      }
+    }
+
+    .app-footer-#{$name} {
+      position: fixed;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      height: var(--app-footer-height);
+      display: flex;
+      flex-flow: column wrap;
+      align-items: center;
+      justify-content: center;
+      color: map-get($theme, primary-fg);
+      font-size: var(--app-font-size-lg);
+      transition: 0.5 font-size;
+
+      @media(max-width: 1365px) {
+        font-size: var(--app-font-size-med);
+        transition: 0.5 font-size;
+      }
+
+      @media(max-width: 1024px) {
+        font-size: var(--app-font-size-sm);
+        transition: 0.5 font-size;
+      }
+
+      @media(max-width: 768px) {
+        font-size: calc(var(--app-font-size-sm) - 2px);
+        transition: 0.5 font-size;
+      }
+
+      @media(max-width: 512px) {
+        font-size: calc(var(--app-font-size-sm) - 4px);
+        transition: 0.5 font-size;
+      }
+
+    }
+  }
+}

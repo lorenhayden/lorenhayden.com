@@ -1,0 +1,220 @@
+@import "./animations";
+@import "./scroller";
+@import "./themes";
+
+@each $name, $theme in $themes {
+  .home-#{$name} {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100vw;
+
+    .home-image-#{$name} {
+      --image-size: 200px;
+      --image-offset: 25px;
+      --image-index: 0;
+      border-radius: 50%;
+      border: solid 5pt map-get($theme, tile-marker-color);
+      width: calc(var(--image-size) - (var(--image-offset) * var(--image-index)));
+      height: calc(var(--image-size) - (var(--image-offset) * var(--image-index)));
+      transition-property: width, height;
+      transition-duration: 0.5s;
+      transition-timing-function: ease-in-out;
+
+      @media(max-width: 1365px) {
+        --image-index: 1;
+        width: calc(var(--image-size) - (var(--image-offset) * var(--image-index)));
+        height: calc(var(--image-size) - (var(--image-offset) * var(--image-index)));
+        transition-property: width, height;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+      }
+
+      @media(max-width: 1024px) {
+        --image-index: 2;
+        width: calc(var(--image-size) - (var(--image-offset) * var(--image-index)));
+        height: calc(var(--image-size) - (var(--image-offset) * var(--image-index)));
+        transition-property: width, height;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+      }
+
+      @media(max-width: 768px) {
+        --image-index: 3;
+        width: calc(var(--image-size) - (var(--image-offset) * var(--image-index)));
+        height: calc(var(--image-size) - (var(--image-offset) * var(--image-index)));
+        transition-property: width, height;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+      }
+
+      @media(max-width: 512px) {
+        --image-index: 4;
+        width: calc(var(--image-size) - (var(--image-offset) * var(--image-index)));
+        height: calc(var(--image-size) - (var(--image-offset) * var(--image-index)));
+        transition-property: width, height;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+      }
+
+    }
+    
+    .home-about-#{$name} {
+      font-size: var(--app-font-size-lg);
+      margin-bottom: 20px;
+    }
+    .home-name-#{$name} {
+      --fade-in-font-size: 60px;
+      --name-font-offset: 8px;
+      font-family: 'Comfortaa', sans-serif;
+      font-size: var(--fade-in-font-size);
+      color: map-get($theme, primary-fg);
+      text-shadow: 0 0 10px map-get($theme, primary-fg);
+      transition-property: font-size;
+      transition-duration: 0.5s;
+      transition-timing-function: ease-in-out;
+
+      @media(max-width: 1365px) {
+        --fade-in-font-size: calc(80px - var(--name-font-offset) * 1);
+        font-size: var(--fade-in-font-size);
+        transition-property: font-size;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+      }
+
+      @media(max-width: 1024px) {
+        --fade-in-font-size: calc(80px - var(--name-font-offset) * 2);
+        font-size: var(--fade-in-font-size);
+        transition-property: font-size;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+      }
+
+      @media(max-width: 768px) {
+        --fade-in-font-size: calc(80px - var(--name-font-offset) * 3);
+        font-size: var(--fade-in-font-size);
+        transition-property: font-size;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+      }
+
+      @media(max-width: 512px) {
+        --fade-in-font-size: calc(80px - var(--name-font-offset) * 4);
+        font-size: var(--fade-in-font-size);
+        transition-property: font-size;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+      }
+
+
+      @media(max-width: 320px) {
+        font-size: calc(var(--name-font-size) - (var(--name-font-offset) * 5));
+        transition-property: font-size;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+      }
+
+    }
+
+    .home-intro-#{$name} {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      font-size: var(--app-font-size-lg);
+    }
+
+    .home-title-#{$name} {
+      --title-font-size: var(--app-font-size-lg);
+      --title-font-offset: 2px;
+      margin-top: 50px;
+      text-transform: uppercase;
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: 10px;
+      text-shadow: 0 0 10px map-get($theme, primary-fg);
+      color: map-get($theme, primary-fg);
+      font-size: var(--app-font-size-lg);
+
+      @media(max-width: 1365px) {
+        font-size: calc(var(--title-font-size) - (var(--title-font-offset) * 1));
+        letter-spacing: 8px;
+        transition-property: font-size;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+      }
+
+      @media(max-width: 1024px) {
+        font-size: calc(var(--title-font-size) - (var(--title-font-offset) * 2));
+        letter-spacing: 6px;
+        transition-property: font-size;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+      }
+
+      @media(max-width: 768px) {
+        font-size: calc(var(--title-font-size) - (var(--title-font-offset) * 3));
+        transition-property: font-size;
+        letter-spacing: 4px;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+      }
+
+      @media(max-width: 512px) {
+        font-size: calc(var(--title-font-size) - (var(--title-font-offset) * 4));
+        letter-spacing: 2px;
+        transition-property: font-size;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+      }
+
+      @media(max-width: 320px) {
+        font-size: calc(var(--title-font-size) - (var(--title-font-offset) * 5));
+        letter-spacing: 1px;
+        transition-property: font-size;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+      }
+
+    }
+
+    .home-download-#{$name} {
+      text-decoration: none;
+      margin-top: 50px;
+      font-family: 'Comfortaa', sans-serif;
+      font-size: var(--app-font-size-lg);
+      border-radius: 5px;
+      padding: 10px;
+      color: map-get($theme, primary-button-fg);
+      background: map-get($theme, primary-button-bg);
+      box-shadow: 0 0 10px map-get($theme, primary-fg);
+      transition-property: font-size;
+      transition-duration: 0.5s;
+      transition-timing-function: ease-in-out;
+
+      @media(max-width: 1356px) {
+        font-size: var(--app-font-size-med);
+        transition-property: font-size;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+      }
+
+      @media(max-width: 1024px) {
+        font-size: var(--app-font-size-sm);
+        transition-property: font-size;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+      }
+
+      @media(max-width: 1024px) {
+        font-size: calc(var(--app-font-size-sm) - 2px);
+        transition-property: font-size;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+      }
+
+      &:hover {
+        box-shadow: 0 0 10px map-get($theme, primary-link-hover);
+      }
+    }
+  }
+}
