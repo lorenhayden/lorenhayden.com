@@ -1,12 +1,14 @@
 // imports
-import { useState } from 'react';
+import { Canvas, useFrame } from '@react-three/fiber';
+import { useGLTF } from '@react-three/drei';
+import { useState, useRef, useEffect } from 'react';
 import { faHome, faList, faChartSimple, faAddressCard } from '@fortawesome/free-solid-svg-icons';
 import { faCodepen, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-
+import { Mesh, DirectionalLight } from 'three';
 
 /* components */
-import ThemePicker, { ThemeDefinition, getTheme } from './components/ThemePicker';
-import AnimatedCursor from './components/Cursor.tsx';
+import ThemePicker, { ThemeDefinition, getTheme, useTheme } from './components/ThemePicker';
+// import AnimatedCursor from './components/Cursor.tsx';
 import Menu, { MenuItem } from './components/Menu.tsx';
 import Hamburger from './components/Hamburger.tsx';
 import Sidebar, { SidebarItem } from './components/Sidebar.tsx';
@@ -21,8 +23,72 @@ import Skills from './Skills.tsx';
 import Contact from './Contact.tsx';
 
 
+const Lights = () => {
+  const theme = useTheme();
+  const lightRef = useRef<DirectionalLight>(null);
+  const lightRef2 = useRef<DirectionalLight>(null);
+  useFrame(() => {
+    if (lightRef.current) {
+      lightRef.current.intensity = theme.name === 'light' ? 5 : 1
+      lightRef.current.position.x = -5;
+      lightRef.current.position.y = 20;
+      lightRef.current.position.z = -10;
+      lightRef.current.color.set("white");
+    }
+    if (lightRef2.current) {
+      lightRef2.current.intensity = theme.name === 'light' ? 5 : 1;
+      lightRef2.current.position.x = 5;
+      lightRef2.current.position.y = 20;
+      lightRef2.current.position.z = 10;
+      lightRef2.current.color.set("white");
+    }
+  })
+  return (
+    <>
+      <directionalLight ref={lightRef} />
+      <directionalLight ref={lightRef2} />
+    </>
+  )
+}
 
-function App() {
+const Scene = () => {
+  const theme = useTheme();
+  //const { scene } = useGLTF('./assets/website.glb');
+  const object = useGLTF('./src/assets/website.glb');
+  const meshRef = useRef<Mesh>(null);
+  useEffect(() => {
+    if (meshRef.current) {
+      meshRef.current.rotation.set(0, -Math.PI / 2, 0);
+      meshRef.current.scale.set(5, 5, 5);
+      meshRef.current.children.forEach((child) => {
+        child.material.wireframe = false;
+      })
+    }
+  }, [])
+
+  useFrame(() => {
+    if (meshRef.current) {
+      let movez = meshRef.current.position.z + 0.035;
+      if (movez >= 50) {
+        movez = 1.0;
+      }
+      meshRef.current.position.set(0, -5, movez);
+      meshRef.current.children.forEach((child) => {
+        child.material.color.set("#049ef4")
+        child.material.metalness = 1.0;
+        child.material.roughness = 0.5;
+      })
+    }
+  })
+  return (
+    <group>
+      <primitive ref={meshRef} object={object.scene} />
+    </group>
+  )
+}
+
+
+const App = () => {
   const [theme, setTheme] = useState(getTheme());
   const [sidebarExpanded, setSidebarExpanded] = useState(false);
 
@@ -37,10 +103,16 @@ function App() {
   const onSidebarItemClicked = (expanded: boolean) => {
     setSidebarExpanded(expanded);
   }
-
+  const backgroundColor = (theme.name === 'light') ? '#f1f1f1' : 'black';
   return (
     <ThemePicker onThemeChanged={onThemeChanged}>
-      <AnimatedCursor />
+      <Canvas camera={{ position: [0, 3, 5] }}
+        style={{ "width": "100vw", "height": "100vh", "backgroundColor": backgroundColor, "zIndex": "-1" }}
+        shadows>
+        <Lights />
+        <Scene />
+      </Canvas>
+      {/* <AnimatedCursor /> */}
       <Hamburger expanded={sidebarExpanded} onChanged={onHamburgerChanged} />
       <Sidebar expanded={sidebarExpanded}>
         <SidebarItem icon={faHome} caption="home" url="#home" onChanged={onSidebarItemClicked} />

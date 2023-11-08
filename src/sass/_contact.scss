@@ -105,12 +105,34 @@
       }
     }
 
-    .contact-map-#{$name} {
-
-      iframe {
-        width: 50vh;
-        height: 50vh;
+    .contact-image-#{$name} {
+      margin-top: 10px;
+      width: 50vh;
+      height: 50vh;
+      img {
+        width: 450px;
+        height: 450px;
+        border-radius: 5px;
         border: solid 2pt map-get($theme, secondary-fg);
+        transition-property: width, height;
+        transition-duration: 1s;
+        @media(max-height: 768px) {
+          height: 250px;
+        }
+        @media(max-width: 1365px){
+          width: 300px;
+          height: 300px;
+          transition-property: width, height;
+          transition-duration: 1s;
+        }
+
+        @media(max-width: 1024px){
+          width: 200px;
+          height: 200px;
+          transition-property: width, height;
+          transition-duration: 1s;
+        }
+
       }
     }
 

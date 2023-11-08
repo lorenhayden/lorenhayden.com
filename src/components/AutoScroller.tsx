@@ -1,5 +1,5 @@
 /* imports */
-import { FC, useState, useEffect, useRef } from 'react';
+import { FC, useState, useEffect } from 'react';
 import { useTheme } from "./ThemePicker"
 
 /* sass */

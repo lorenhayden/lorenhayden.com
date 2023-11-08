@@ -37,10 +37,6 @@ const Home = () => {
     if (canvasElement) {
       observer.observe(canvasElement)
     }
-    const imageElement = document.getElementById("image");
-    if (imageElement) {
-      observer.observe(imageElement)
-    }
     const nameElement = document.getElementById("name");
     if (nameElement) {
       observer.observe(nameElement)
@@ -56,7 +52,6 @@ const Home = () => {
   }, [])
   return (
     <section className={`home-${theme.name}`}>
-      <img id="image" className={`home-image-${theme.name} fade-in`} src="me.png" alt="Face picture of Loren Hayden" />
       <div  id="name" className={`home-name-${theme.name} fade-in`}>
         {name}
       </div >

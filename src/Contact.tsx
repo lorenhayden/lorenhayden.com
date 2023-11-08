@@ -71,8 +71,8 @@ const Contact = () => {
             )
           })}
         </ul>
-        <div className={`contact-map-${theme.name}`}>
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12912.871215802283!2d-115.25661350000001!3d35.99054445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c8c9bb14975093%3A0xb0e70bbcf0244ec4!2sLas%20Vegas%2C%20NV%2089179!5e0!3m2!1sen!2sus!4v1699202855859!5m2!1sen!2sus" loading="lazy" ></iframe>
+        <div className={`contact-image-${theme.name}`}>
+          <img src="./me.png" alt="Picture of Loren Hayden" />
         </div>
       </div>
     </div>

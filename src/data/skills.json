@@ -38,8 +38,8 @@
     "items": [
       { "name": "Microsoft SQL", "percent": 85, "level": "advanced" },
       { "name": "Microsoft Access", "percent": 85, "level": "advanced" },
-      { "name": "MySQL", "percent": 85, "level": "advanced" },
-      { "name": "Postgres SQL", "percent": 85, "level": "advanced" }
+      { "name": "MySQL", "percent": 75, "level": "intermediate" },
+      { "name": "Postgres SQL", "percent": 70, "level": "intermediate" }
     ]
   }
 ]
