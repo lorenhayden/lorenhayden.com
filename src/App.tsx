@@ -1,10 +1,11 @@
 // imports
-import { Canvas, useFrame } from '@react-three/fiber';
-import { useGLTF } from '@react-three/drei';
+import { Canvas, useFrame, useThree } from '@react-three/fiber';
+import { OrbitControls, useGLTF } from '@react-three/drei';
 import { useState, useRef, useEffect } from 'react';
 import { faHome, faList, faChartSimple, faAddressCard } from '@fortawesome/free-solid-svg-icons';
 import { faCodepen, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { Mesh, DirectionalLight } from 'three';
+import { Mesh, DirectionalLight, PointLight } from 'three';
+import { useControls } from 'leva';
 
 /* components */
 import ThemePicker, { ThemeDefinition, getTheme, useTheme } from './components/ThemePicker';
@@ -28,20 +29,23 @@ const Lights = () => {
   const lightRef2 = useRef<DirectionalLight>(null);
   useFrame(() => {
     if (lightRef.current) {
-      lightRef.current.intensity = theme.name === 'light' ? 10 : 2
-      lightRef.current.position.x = -5;
-      lightRef.current.position.y = 20;
+      lightRef.current.intensity = theme.name === 'light' ? 5 : 10
+      lightRef.current.position.x = -10;
+      lightRef.current.position.y = 10;
       lightRef.current.position.z = -10;
       lightRef.current.color.set("#00aeff");
+      lightRef.current.castShadow = true;
     }
     if (lightRef2.current) {
-      lightRef2.current.intensity = theme.name === 'light' ? 10 : 2;
-      lightRef2.current.position.x = 5;
-      lightRef2.current.position.y = 20;
+      lightRef2.current.intensity = theme.name === 'light' ? 5 : 10;
+      lightRef2.current.position.x = 10;
+      lightRef2.current.position.y = 10;
       lightRef2.current.position.z = 10;
       lightRef2.current.color.set("#00aeff");
+      lightRef2.current.castShadow = true;
     }
   })
+
   return (
     <>
       <directionalLight ref={lightRef} />
@@ -55,6 +59,7 @@ const Scene = () => {
   const meshRef = useRef<Mesh>(null);
   useEffect(() => {
     if (meshRef.current) {
+      meshRef.current.position.set(0, -20, 0);
       meshRef.current.rotation.set(0, -Math.PI / 2, 0);
       meshRef.current.scale.set(5, 5, 5);
     }
@@ -66,7 +71,7 @@ const Scene = () => {
       if (movez >= 50) {
         movez = 1.0;
       }
-      meshRef.current.position.set(0, -5, movez);
+      meshRef.current.position.set(0, -20, movez);
     }
   })
   return (
@@ -100,11 +105,12 @@ const App = () => {
         shadows>
         <Lights />
         <Scene />
+        <OrbitControls />
       </Canvas>
       {/* <AnimatedCursor /> */}
       <Hamburger expanded={sidebarExpanded} onChanged={onHamburgerChanged} />
       <Sidebar expanded={sidebarExpanded}>
-        <SidebarItem icon={faHome} caption="home" url="#home" onChanged={onSidebarItemClicked} />
+        <SidebarItem icon={faHome} caption="home" url="/" onChanged={onSidebarItemClicked} />
         <SidebarItem icon={faList} caption="experience" url="#experience" onChanged={onSidebarItemClicked} />
         <SidebarItem icon={faChartSimple} caption="skills" url="#skills" onChanged={onSidebarItemClicked} />
         <SidebarItem icon={faAddressCard} caption="contact" url="#contact" onChanged={onSidebarItemClicked} />
@@ -112,7 +118,7 @@ const App = () => {
       <div id="app-header" className={`app-${theme.name}`}>
         <header className={`app-header-${theme.name}`}>
           <Menu>
-            <MenuItem icon={faHome} caption="home" url="#home" />
+            <MenuItem icon={faHome} caption="home" url="/" />
             <MenuItem icon={faList} caption="experience" url="#experience" />
             <MenuItem icon={faChartSimple} caption="skills" url="#skills" />
             <MenuItem icon={faAddressCard} caption="contact" url="#contact" />

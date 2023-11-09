@@ -10,9 +10,6 @@
     left: 0px;
     right: 0px;
     bottom: 0px;
-    background-color: map-get($theme, primary-bg);
-    opacity: .85;
-    transition: 1s background-color;
 
     .app-header-#{$name} {
       position: fixed;
@@ -25,6 +22,9 @@
       flex-flow: row wrap;
       align-items: center;
       justify-content: center;
+      background-color: map-get($theme, primary-bg);
+      opacity: .85;
+      transition: 1s background-color;
     }
 
     .app-content-#{$name} {
